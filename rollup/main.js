@@ -1,3 +1,4 @@
+
 /*
   @license
 	Rollup.js v4.24.3
@@ -11,16 +12,16 @@
 
 Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 
-const rollup = require('./shared/rollup.js');
-const parseAst_js = require('./shared/parseAst.js');
-const fseventsImporter = require('./shared/fsevents-importer.js');
-require('node:process');
-require('tty');
-require('node:path');
-require('path');
-require('./native.js');
-require('node:perf_hooks');
-require('node:fs/promises');
+import rollup from "./shared/rollup.js"
+import parseAst_js from "./shared/parseAst.js"
+import fseventsImporter from "./shared/fsevents-importer.js"
+import "node:process"
+import "node:tty"
+import "node:path"
+import "node:path"
+import "./native.js"
+import "node:perf_hooks"
+import "node:fs/promises"
 
 class WatchEmitter {
     constructor() {
@@ -89,7 +90,7 @@ async function watchInternal(configs, emitter) {
         return parseAst_js.error(parseAst_js.logInvalidOption('watch', parseAst_js.URL_WATCH, 'there must be at least one config where "watch" is not set to "false"'));
     }
     await fseventsImporter.loadFsEvents();
-    const { Watcher } = await Promise.resolve().then(() => require('./shared/watch.js'));
+    const { Watcher } = await import('./shared/watch.js')/* FIXME: can't auto handle deep require (await import('./shared/watch.js')) */;
     new Watcher(watchOptionsList, emitter);
 }
 
@@ -98,3 +99,4 @@ exports.defineConfig = rollup.defineConfig;
 exports.rollup = rollup.rollup;
 exports.watch = watch;
 //# sourceMappingURL=rollup.js.map
+;export default exports

@@ -1,3 +1,4 @@
+
 /*
   @license
 	Rollup.js v4.24.3
@@ -11,12 +12,14 @@
 
 Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 
-require('./native.js');
-const parseAst_js = require('./shared/parseAst.js');
-require('node:path');
+import "./native.js"
+import parseAst_js from "./shared/parseAst.js"
+import "node:path"
 
 
 
 exports.parseAst = parseAst_js.parseAst;
 exports.parseAstAsync = parseAst_js.parseAstAsync;
 //# sourceMappingURL=parseAst.js.map
+
+;export default exports

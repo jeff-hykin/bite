@@ -1,3 +1,4 @@
+
 /*
   @license
 	Rollup.js v4.24.3
@@ -67,3 +68,5 @@ const testFilter = (log, key, parts) => {
 
 exports.getLogFilter = getLogFilter;
 //# sourceMappingURL=getLogFilter.js.map
+
+;export default exports

@@ -43,7 +43,9 @@ const packageBase = getPackageBase();
 const localName = `./rollup.${packageBase}.node`;
 const requireWithFriendlyError = id => {
 	try {
-		return require(id)/* FIXME: can auto handle deep require (await import(id)) */;
+        console.log(`This is deno, no way am I letting you load ${id}`)
+        return {}
+		// return require(id)/* FIXME: can auto handle deep require (await import(id)) */;
 	} catch (error) {
 		if (
 			platform === 'win32' &&
@@ -71,6 +73,7 @@ const requireWithFriendlyError = id => {
 };
 
 const { parse, parseAsync, xxhashBase64Url, xxhashBase36, xxhashBase16 } = requireWithFriendlyError(
+    import.meta.resolve(),
 	existsSync(path.join(__dirname, localName)) ? localName : `@rollup/rollup-${packageBase}`
 );
 

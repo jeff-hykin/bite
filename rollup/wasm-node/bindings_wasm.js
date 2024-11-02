@@ -1,8 +1,9 @@
+module = module||{};module.exports=module.exports||{};
 
 let imports = {};
 imports['__wbindgen_placeholder__'] = module.exports;
 let wasm;
-const { TextDecoder, TextEncoder } = require(`util`);
+const { TextDecoder, TextEncoder } = require(`util`)/* FIXME: can't auto handle deep require (await import(`util`)) */;
 
 const heap = new Array(128).fill(undefined);
 
@@ -364,11 +365,13 @@ module.exports.__wbindgen_memory = function() {
     return addHeapObject(ret);
 };
 
-const path = require('path').join(__dirname, 'bindings_wasm_bg.wasm');
-const bytes = require('fs').readFileSync(path);
+const path = require('path')/* FIXME: can't auto handle deep require (await import('path')) */.join(__dirname, 'bindings_wasm_bg.wasm');
+const bytes = require('fs')/* FIXME: can't auto handle deep require (await import('fs')) */.readFileSync(path);
 
 const wasmModule = new WebAssembly.Module(bytes);
 const wasmInstance = new WebAssembly.Instance(wasmModule, imports);
 wasm = wasmInstance.exports;
 module.exports.__wasm = wasm;
 
+
+;export default module.exports

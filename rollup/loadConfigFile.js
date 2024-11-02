@@ -1,3 +1,4 @@
+
 /*
   @license
 	Rollup.js v4.24.3
@@ -11,20 +12,22 @@
 
 Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 
-require('node:fs/promises');
-require('node:path');
-require('node:process');
-require('node:url');
-require('./shared/rollup.js');
-require('./shared/parseAst.js');
-const loadConfigFile_js = require('./shared/loadConfigFile.js');
-require('tty');
-require('path');
-require('./native.js');
-require('node:perf_hooks');
-require('./getLogFilter.js');
+import "node:fs/promises"
+import "node:path"
+import "node:process"
+import "node:url"
+import "./shared/rollup.js"
+import "./shared/parseAst.js"
+import loadConfigFile_js from "./shared/loadConfigFile.js"
+import "node:tty"
+import "node:path"
+import "./native.js"
+import "node:perf_hooks"
+import "./getLogFilter.js"
 
 
 
 exports.loadConfigFile = loadConfigFile_js.loadConfigFile;
 //# sourceMappingURL=loadConfigFile.js.map
+
+;export default exports
