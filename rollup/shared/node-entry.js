@@ -9,12 +9,12 @@
 */
 import { ExportDefaultDeclaration as ExportDefaultDeclaration$1, CallExpression as CallExpression$1, EMPTY_ARRAY, LOGLEVEL_WARN, logUnusedExternalImports, ANNOTATION_KEY, INVALID_ANNOTATION_KEY, Program as Program$1, logIllegalImportReassignment, BLANK, logRedeclarationError, StaticBlock as StaticBlock$1, CatchClause as CatchClause$1, logDuplicateArgumentNameError, logModuleLevelDirective, ReturnStatement as ReturnStatement$1, VariableDeclarator as VariableDeclarator$1, ExpressionStatement as ExpressionStatement$1, logMissingExport, normalize, getImportPath, logMissingNodeBuiltins, logReservedNamespace, error, logIllegalIdentifierAsName, logMissingNameOptionForIifeExport, logMissingNameOptionForUmdExport, Property as Property$1, logConstVariableReassignError, ArrowFunctionExpression as ArrowFunctionExpression$1, EMPTY_SET, logCannotCallNamespace, logEval, BlockStatement as BlockStatement$1, getRollupError, logParseError, logModuleParseError, LOGLEVEL_INFO, logFirstSideEffect, locate, logInvalidAnnotation, Identifier as Identifier$1, logThisIsUndefined, getAstBuffer, convertAnnotations, FIXED_STRINGS, convertNode as convertNode$1, EMPTY_OBJECT, logImportAttributeIsInvalid, logImportOptionsAreInvalid, logSyntheticNamedExportsNeedNamespaceExport, logMissingEntryExport, logDuplicateExportError, logInvalidSourcemapForError, augmentCodeLocation, logInconsistentImportAttributes, logMissingJsxExport, logNamespaceConflict, logAmbiguousExternalNamespaces, logShimmedExport, parseAst, logCircularReexport, logInvalidFormatForTopLevelAwait, TemplateLiteral as TemplateLiteral$1, Literal as Literal$1, logAddonNotGenerated, logIncompatibleExportOptionValue, logMixedExport, logFailedValidation, isPathFragment, logCyclicCrossChunkReexport, getAliasName, logUnexpectedNamedImport, isAbsolute as isAbsolute$1, relative as relative$1, logUnexpectedNamespaceReexport, logEmptyChunk, logMissingGlobalName, logOptimizeChunkStatus, logSourcemapBroken, logConflictingSourcemapSources, logChunkInvalid, logInvalidOption, URL_OUTPUT_FORMAT, URL_OUTPUT_DIR, URL_OUTPUT_SOURCEMAPFILE, URL_OUTPUT_AMD_ID, logCannotAssignModuleToChunk, logAnonymousPluginCache, logDuplicatePluginName, logUnknownOption, printQuotedStringList, LOGLEVEL_ERROR, logLevelPriority, LOGLEVEL_DEBUG, logInvalidSetAssetSourceCall, logPluginError, logNoTransformMapOrAstWithoutCode, relativeId, logBadLoader, logExternalModulesCannotBeTransformedToModules, logInternalIdCannotBeExternal, isRelative, logUnresolvedImport, logUnresolvedImportTreatedAsExternal, logExternalSyntheticExports, logUnresolvedEntry, logUnresolvedImplicitDependant, logExternalModulesCannotBeIncludedInManualChunks, logEntryCannotBeExternal, logImplicitDependantCannotBeExternal, logNoAssetSourceSet, logFileReferenceIdNotFoundForFilename, logAssetReferenceIdNotFoundForSetSource, logAssetSourceAlreadySet, logInvalidRollupPhaseForChunkEmission, warnDeprecation, URL_GENERATEBUNDLE, logFileNameConflict, logAssetNotFinalisedForFileName, logChunkNotGeneratedForFileName, logInvalidLogPosition, logInputHookInOutputPlugin, logInvalidFunctionPluginHook, logInvalidAddonPluginHook, logImplicitDependantIsNotIncluded, logCircularDependency, augmentLogMessage, URL_JSX, URL_TREESHAKE, URL_TREESHAKE_MODULESIDEEFFECTS, logInvalidExportOptionValue, URL_OUTPUT_INTEROP, isValidUrl, addTrailingSlashIfMissed, URL_OUTPUT_SOURCEMAPBASEURL, URL_OUTPUT_INLINEDYNAMICIMPORTS, URL_PRESERVEENTRYSIGNATURES, URL_OUTPUT_AMD_BASEPATH, URL_OUTPUT_GENERATEDCODE, URL_OUTPUT_MANUALCHUNKS, URL_OUTPUT_EXTERNALIMPORTATTRIBUTES, logAlreadyClosed, logMissingFileOrDirOption, logCannotEmitFromOptionsHook, URL_WATCH } from './parseAst.js';
 import { relative, dirname, basename, extname, resolve as resolve$1 } from 'node:path';
-import { posix, win32, isAbsolute, resolve } from 'path';
-import { parseAsync, xxhashBase64Url, xxhashBase36, xxhashBase16 } from '../../native.js';
+import { posix, win32, isAbsolute, resolve } from 'node:path';
+import { parseAsync, xxhashBase64Url, xxhashBase36, xxhashBase16 } from '../native.js';
 import process$1, { env as env$1 } from 'node:process';
 import { performance } from 'node:perf_hooks';
 import { lstat, realpath, readdir, readFile, mkdir, writeFile } from 'node:fs/promises';
-import * as tty from 'tty';
+import * as tty from 'node:tty';
 
 var version = "4.24.3";
 
@@ -328,7 +328,7 @@ let Chunk$1 = class Chunk {
 			// '  test'.trim()
 			//     split   -> '  ' + 'test'
 			//   ✔️ edit    -> '' + 'test'
-			//   ✖️ edit    -> 'test' + '' 
+			//   ✖️ edit    -> 'test' + ''
 			// TODO is this block necessary?...
 			newChunk.edit('', false);
 			this.content = '';
@@ -6019,7 +6019,7 @@ class ExpressionStatement extends NodeBase {
         if (this.directive &&
             this.directive !== 'use strict' &&
             this.parent.type === Program$1) {
-            this.scope.context.log(LOGLEVEL_WARN, 
+            this.scope.context.log(LOGLEVEL_WARN,
             // This is necessary, because either way (deleting or not) can lead to errors.
             logModuleLevelDirective(this.directive, this.scope.context.module.id), this.start);
         }
@@ -8774,7 +8774,7 @@ function requireUtils () {
 		  }
 
 		  return last;
-		}; 
+		};
 	} (utils));
 	return utils;
 }
@@ -16223,7 +16223,7 @@ class Module {
             if (module.info.syntheticNamedExports === name) {
                 continue;
             }
-            const [variable, indirectExternal] = getVariableForExportNameRecursive(module, name, importerForSideEffects, true, 
+            const [variable, indirectExternal] = getVariableForExportNameRecursive(module, name, importerForSideEffects, true,
             // We are creating a copy to handle the case where the same binding is
             // imported through different namespace reexports gracefully
             copyNameToModulesMap(searchedNamesAndModules));
@@ -16936,7 +16936,7 @@ class Chunk {
             }
         }
         for (const module of entryModules) {
-            const requiredFacades = Array.from(new Set(module.chunkNames.filter(({ isUserDefined }) => isUserDefined).map(({ name }) => name)), 
+            const requiredFacades = Array.from(new Set(module.chunkNames.filter(({ isUserDefined }) => isUserDefined).map(({ name }) => name)),
             // mapping must run after Set 'name' dedupe
             name => ({
                 name
@@ -18351,7 +18351,7 @@ function compareChunkSize({ size: sizeA }, { size: sizeB }) {
 function mergeChunks(chunkPartition, minChunkSize, sideEffectAtoms, sizeByAtom) {
     const { small } = chunkPartition;
     for (const mergedChunk of small) {
-        const bestTargetChunk = findBestMergeTarget(mergedChunk, chunkPartition, sideEffectAtoms, sizeByAtom, 
+        const bestTargetChunk = findBestMergeTarget(mergedChunk, chunkPartition, sideEffectAtoms, sizeByAtom,
         // In the default case, we do not accept size increases
         minChunkSize <= 1 ? 1 : Infinity);
         if (bestTargetChunk) {
@@ -18407,7 +18407,7 @@ function findBestMergeTarget(mergedChunk, { big, small }, sideEffectAtoms, sizeB
  * Merging will not produce cycles if none of the direct non-merged
  * dependencies of a chunk have the other chunk as a transitive dependency.
  */
-function getAdditionalSizeAfterMerge(mergedChunk, targetChunk, 
+function getAdditionalSizeAfterMerge(mergedChunk, targetChunk,
 // The maximum additional unused code size allowed to be added by the merge,
 // taking dependencies into account, needs to be below this number
 currentAdditionalSize, sideEffectAtoms, sizeByAtom) {

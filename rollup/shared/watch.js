@@ -10,18 +10,18 @@
 import { getAugmentedNamespace, fseventsImporter, getDefaultExportFromCjs, createFilter, rollupInternal } from './node-entry.js';
 import path from 'node:path';
 import process$1 from 'node:process';
-import require$$0$1 from 'path';
-import require$$0$2 from 'fs';
-import require$$2 from 'util';
-import require$$1 from 'stream';
-import require$$2$1 from 'os';
-import require$$0$3 from 'events';
+import require$$0$1 from 'node:path';
+import require$$0$2 from 'node:fs';
+import require$$2 from 'node:util';
+import require$$1 from 'node:stream';
+import require$$2$1 from 'node:os';
+import require$$0$3 from 'node:events';
 import { platform } from 'node:os';
 import './parseAst.js';
-import '../../native.js';
+import '../native.js';
 import 'node:perf_hooks';
 import 'node:fs/promises';
-import 'tty';
+import 'node:tty';
 
 var chokidar$1 = {};
 
@@ -282,7 +282,7 @@ function requireUtils$2 () {
 		    output = `(?:^(?!${output}).*$)`;
 		  }
 		  return output;
-		}; 
+		};
 	} (utils$2));
 	return utils$2;
 }
@@ -2693,7 +2693,7 @@ function requireUtils$1 () {
 		    output = `(?:^(?!${output}).*$)`;
 		  }
 		  return output;
-		}; 
+		};
 	} (utils$1));
 	return utils$1;
 }
@@ -5073,7 +5073,7 @@ function requireUtils () {
 
 		  flat(args);
 		  return result;
-		}; 
+		};
 	} (utils));
 	return utils;
 }
@@ -6827,7 +6827,7 @@ function requireConstants () {
 		exports.isWindows = platform === 'win32';
 		exports.isMacos = platform === 'darwin';
 		exports.isLinux = platform === 'linux';
-		exports.isIBMi = os.type() === 'OS400'; 
+		exports.isIBMi = os.type() === 'OS400';
 	} (constants));
 	return constants;
 }
