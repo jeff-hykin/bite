@@ -15,9 +15,9 @@ const exports = {
 }
 
 export {
-    parse
-    xxhashBase64Url
-    xxhashBase36
-    xxhashBase16
+    parse,
+    xxhashBase64Url,
+    xxhashBase36,
+    xxhashBase16,
 }
 export default exports

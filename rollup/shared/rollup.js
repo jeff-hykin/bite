@@ -1,4 +1,6 @@
-'use strict';module = module||{};module.exports=module.exports||{};
+'use strict';
+var module = module||{};module.exports=module.exports||{};
+var exports = module.exports;
 /*
   @license
 	Rollup.js v4.24.3

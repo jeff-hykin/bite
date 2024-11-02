@@ -10,8 +10,7 @@
 */
 'use strict';
 
-Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-
+var exports = {};
 import rollup from "./shared/rollup.js"
 import parseAst_js from "./shared/parseAst.js"
 import fseventsImporter from "./shared/fsevents-importer.js"
@@ -94,7 +93,7 @@ async function watchInternal(configs, emitter) {
     new Watcher(watchOptionsList, emitter);
 }
 
-var { version : VERSION, defineConfig, rollup } = rollup;
+var { version : VERSION, defineConfig, rollup: rollupInner } = rollup;
 exports.VERSION = rollup.version;
 exports.defineConfig = rollup.defineConfig;
 exports.rollup = rollup.rollup;
@@ -102,7 +101,7 @@ exports.watch = watch;
 export {
     VERSION,
     defineConfig,
-    rollup,
+    rollupInner as rollup,
     watch,
 }
 //# sourceMappingURL=rollup.js.map

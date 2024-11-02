@@ -1,4 +1,4 @@
-module = module||{};module.exports=module.exports||{};
+var module = module||{};module.exports=module.exports||{};
 import fs from 'node:fs';
 import { TextDecoder, TextEncoder } from "node:util";
 
@@ -366,7 +366,7 @@ module.exports.__wbindgen_memory = function() {
     return addHeapObject(ret);
 };
 
-const path = import.meta.resolve('bindings_wasm_bg.wasm');
+const path = (new URL(import.meta.resolve('./bindings_wasm_bg.wasm'))).pathname;
 const bytes = fs.readFileSync(path);
 
 const wasmModule = new WebAssembly.Module(bytes);
