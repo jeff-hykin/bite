@@ -8,18 +8,11 @@
 
 	Released under the MIT License.
 */
-'use strict';
-
-Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
-
 import "./native.js"
 import parseAst_js from "./shared/parseAst.js"
 import "node:path"
 
+export const parseAst = parseAst_js.parseAst
+export const parseAstAsync = parseAst_js.parseAstAsync
 
-
-exports.parseAst = parseAst_js.parseAst;
-exports.parseAstAsync = parseAst_js.parseAstAsync;
-//# sourceMappingURL=parseAst.js.map
-
-;export default exports
+export default exports

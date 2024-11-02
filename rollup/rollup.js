@@ -90,14 +90,20 @@ async function watchInternal(configs, emitter) {
         return parseAst_js.error(parseAst_js.logInvalidOption('watch', parseAst_js.URL_WATCH, 'there must be at least one config where "watch" is not set to "false"'));
     }
     await fseventsImporter.loadFsEvents();
-    const { Watcher } = await Promise.resolve().then(() => require('./shared/watch.js')/* FIXME: can't auto handle deep require (await import('./shared/watch.js')) */);
+    const { Watcher } = await import('./shared/watch.js')/* FIXME: can't auto handle deep require (await import('./shared/watch.js')) */;
     new Watcher(watchOptionsList, emitter);
 }
 
+var { version : VERSION, defineConfig, rollup } = rollup;
 exports.VERSION = rollup.version;
 exports.defineConfig = rollup.defineConfig;
 exports.rollup = rollup.rollup;
 exports.watch = watch;
+export {
+    VERSION,
+    defineConfig,
+    rollup,
+    watch,
+}
 //# sourceMappingURL=rollup.js.map
-
 ;export default exports

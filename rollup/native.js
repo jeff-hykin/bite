@@ -1,16 +1,23 @@
-
 import {
 	parse,
 	xxhashBase64Url,
 	xxhashBase36,
-	xxhashBase16
+	xxhashBase16,
 } from "./wasm-node/bindings_wasm.js"
 
-exports.parse = parse;
-exports.parseAsync = async (code, allowReturnOutsideFunction, _signal) =>
-	parse(code, allowReturnOutsideFunction);
-exports.xxhashBase64Url = xxhashBase64Url;
-exports.xxhashBase36 = xxhashBase36;
-exports.xxhashBase16 = xxhashBase16;
+export const parseAsync = parse
+const exports = {
+    parse,
+	xxhashBase64Url,
+	xxhashBase36,
+	xxhashBase16,
+    parseAsync,
+}
 
-;export default exports
+export {
+    parse
+    xxhashBase64Url
+    xxhashBase36
+    xxhashBase16
+}
+export default exports

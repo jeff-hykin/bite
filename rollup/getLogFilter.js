@@ -9,7 +9,7 @@
 	Released under the MIT License.
 */
 'use strict';
-
+var exports = {};
 Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
 
 const getLogFilter = filters => {
@@ -69,4 +69,5 @@ const testFilter = (log, key, parts) => {
 exports.getLogFilter = getLogFilter;
 //# sourceMappingURL=getLogFilter.js.map
 
+export { getLogFilter }
 ;export default exports

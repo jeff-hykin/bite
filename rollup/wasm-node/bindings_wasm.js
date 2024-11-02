@@ -1,9 +1,10 @@
 module = module||{};module.exports=module.exports||{};
+import fs from 'node:fs';
+import { TextDecoder, TextEncoder } from "node:util";
 
 let imports = {};
 imports['__wbindgen_placeholder__'] = module.exports;
 let wasm;
-import { TextDecoder, TextEncoder } from "node:util";
 
 const heap = new Array(128).fill(undefined);
 
@@ -365,13 +366,90 @@ module.exports.__wbindgen_memory = function() {
     return addHeapObject(ret);
 };
 
-const path = require('path')/* FIXME: can't auto handle deep require (await import('path')) */.join(__dirname, 'bindings_wasm_bg.wasm');
-const bytes = require('fs')/* FIXME: can't auto handle deep require (await import('fs')) */.readFileSync(path);
+const path = import.meta.resolve('bindings_wasm_bg.wasm');
+const bytes = fs.readFileSync(path);
 
 const wasmModule = new WebAssembly.Module(bytes);
 const wasmInstance = new WebAssembly.Instance(wasmModule, imports);
 wasm = wasmInstance.exports;
 module.exports.__wasm = wasm;
 
+const {
+    parse,
+    xxhashBase64Url,
+    xxhashBase36,
+    xxhashBase16,
+    __wbindgen_object_drop_ref,
+    __wbg_crypto_1d1f22824a6a080c,
+    __wbindgen_is_object,
+    __wbg_process_4a72847cc503995b,
+    __wbg_versions_f686565e586dd935,
+    __wbg_node_104a2ff8d6ea03a2,
+    __wbindgen_is_string,
+    __wbg_require_cca90b1a94a0255b,
+    __wbindgen_is_function,
+    __wbindgen_string_new,
+    __wbg_msCrypto_eb05e62b530a1508,
+    __wbg_randomFillSync_5c9c955aa56b6049,
+    __wbg_getRandomValues_3aa56aa6edec874c,
+    __wbindgen_object_clone_ref,
+    __wbg_newnoargs_1ede4bf2ebbaaf43,
+    __wbg_call_a9ef466721e824f2,
+    __wbg_self_bf91bf94d9e04084,
+    __wbg_window_52dd9f07d03fd5f8,
+    __wbg_globalThis_05c129bf37fcf1be,
+    __wbg_global_3eca19bb09e9c484,
+    __wbindgen_is_undefined,
+    __wbg_call_3bfa248576352471,
+    __wbg_buffer_ccaed51a635d8a2d,
+    __wbg_newwithbyteoffsetandlength_7e3eb787208af730,
+    __wbg_new_fec2611eb9180f95,
+    __wbg_set_ec2fcf81bc573fd9,
+    __wbg_length_9254c4bd3b9f23c4,
+    __wbg_newwithlength_76462a666eca145f,
+    __wbg_subarray_975a06f9dbd16995,
+    __wbindgen_throw,
+    __wbindgen_memory,
+    __wasm,
+} = module.exports;
+
+export {
+    parse,
+    xxhashBase64Url,
+    xxhashBase36,
+    xxhashBase16,
+    __wbindgen_object_drop_ref,
+    __wbg_crypto_1d1f22824a6a080c,
+    __wbindgen_is_object,
+    __wbg_process_4a72847cc503995b,
+    __wbg_versions_f686565e586dd935,
+    __wbg_node_104a2ff8d6ea03a2,
+    __wbindgen_is_string,
+    __wbg_require_cca90b1a94a0255b,
+    __wbindgen_is_function,
+    __wbindgen_string_new,
+    __wbg_msCrypto_eb05e62b530a1508,
+    __wbg_randomFillSync_5c9c955aa56b6049,
+    __wbg_getRandomValues_3aa56aa6edec874c,
+    __wbindgen_object_clone_ref,
+    __wbg_newnoargs_1ede4bf2ebbaaf43,
+    __wbg_call_a9ef466721e824f2,
+    __wbg_self_bf91bf94d9e04084,
+    __wbg_window_52dd9f07d03fd5f8,
+    __wbg_globalThis_05c129bf37fcf1be,
+    __wbg_global_3eca19bb09e9c484,
+    __wbindgen_is_undefined,
+    __wbg_call_3bfa248576352471,
+    __wbg_buffer_ccaed51a635d8a2d,
+    __wbg_newwithbyteoffsetandlength_7e3eb787208af730,
+    __wbg_new_fec2611eb9180f95,
+    __wbg_set_ec2fcf81bc573fd9,
+    __wbg_length_9254c4bd3b9f23c4,
+    __wbg_newwithlength_76462a666eca145f,
+    __wbg_subarray_975a06f9dbd16995,
+    __wbindgen_throw,
+    __wbindgen_memory,
+    __wasm,
+}
 
 ;export default module.exports
