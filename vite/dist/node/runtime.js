@@ -1,3 +1,4 @@
+module = module||{};module.exports=module.exports||{};
 const VALID_ID_PREFIX = "/@id/", NULL_BYTE_PLACEHOLDER = "__x00__";
 let SOURCEMAPPING_URL = "sourceMa";
 SOURCEMAPPING_URL += "ppingURL";
@@ -1064,3 +1065,5 @@ export {
   ssrImportMetaKey,
   ssrModuleExportsKey
 };
+
+;export default module.exports

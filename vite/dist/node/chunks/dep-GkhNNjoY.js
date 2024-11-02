@@ -1,11 +1,11 @@
-import { B as getDefaultExportFromCjs } from './dep-BWSbWtLw.js';
-import require$$0 from 'path';
-import require$$0__default from 'fs';
-import { l as lib } from './dep-IQS-Za7F.js';
+import { B as getDefaultExportFromCjs } from "./dep-BWSbWtLw.js";
+import require$$0 from "node:path";
+import require$$0__default from "node:fs";
+import { l as lib } from "./dep-IQS-Za7F.js";
 
-import { fileURLToPath as __cjs_fileURLToPath } from 'node:url';
-import { dirname as __cjs_dirname } from 'node:path';
-import { createRequire as __cjs_createRequire } from 'node:module';
+import { fileURLToPath as __cjs_fileURLToPath } from "node:url";
+import { dirname as __cjs_dirname } from "node:path";
+import { createRequire as __cjs_createRequire } from "node:module";
 
 const __filename = __cjs_fileURLToPath(import.meta.url);
 const __dirname = __cjs_dirname(__filename);

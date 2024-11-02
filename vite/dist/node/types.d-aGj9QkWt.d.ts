@@ -1,6 +1,7 @@
-import { ModuleNamespace, ViteHotContext } from '../../types/hot.js';
-import { Update, HMRPayload } from '../../types/hmrPayload.js';
-import { InferCustomEventPayload } from '../../types/customEvent.js';
+
+import { ModuleNamespace, ViteHotContext } from "../../types/hot.js";
+import { Update, HMRPayload } from "../../types/hmrPayload.js";
+import { InferCustomEventPayload } from "../../types/customEvent.js";
 
 type CustomListenersMap = Map<string, ((data: any) => void)[]>;
 interface HotModule {
@@ -279,3 +280,5 @@ interface ImportMetaEnv {
 }
 
 export { type FetchResult as F, type HMRLogger as H, ModuleCacheMap as M, type ResolvedResult as R, type SSRImportMetadata as S, type ViteRuntimeOptions as V, type FetchFunction as a, type ViteModuleRunner as b, HMRClient as c, type ViteRuntimeModuleContext as d, type HMRConnection as e, type ModuleCache as f, type HMRRuntimeConnection as g, type ViteRuntimeImportMeta as h, ssrExportAllKey as i, ssrImportKey as j, ssrImportMetaKey as k, ssrModuleExportsKey as l, ssrDynamicImportKey as s };
+
+;export default exports

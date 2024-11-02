@@ -1,35 +1,36 @@
+
 /// <reference types="node" />
-import { PluginHooks, RollupError, SourceMap, ModuleInfo, PartialResolvedId, MinimalPluginContext, InputOptions, CustomPluginOptions, LoadResult, SourceDescription, RollupOptions, WatcherOptions, InputOption, ModuleFormat, RollupOutput, RollupWatcher, SourceMapInput, ExistingRawSourceMap, OutputBundle, OutputChunk, ObjectHook, PluginContext, ResolveIdResult, TransformPluginContext, GetManualChunk } from 'rollup';
-import * as rollup from 'rollup';
+import { PluginHooks, RollupError, SourceMap, ModuleInfo, PartialResolvedId, MinimalPluginContext, InputOptions, CustomPluginOptions, LoadResult, SourceDescription, RollupOptions, WatcherOptions, InputOption, ModuleFormat, RollupOutput, RollupWatcher, SourceMapInput, ExistingRawSourceMap, OutputBundle, OutputChunk, ObjectHook, PluginContext, ResolveIdResult, TransformPluginContext, GetManualChunk } from "rollup" /* CHECKME: file(s) didn't exist, assuming npm */;
+import * as rollup from "rollup" /* CHECKME: file(s) didn't exist, assuming npm */;
 export { rollup as Rollup };
-export { parseAst, parseAstAsync } from 'rollup/parseAst';
-import * as http from 'node:http';
-import { OutgoingHttpHeaders, ClientRequestArgs, IncomingMessage, ClientRequest, Agent, Server, ServerResponse } from 'node:http';
-import { Http2SecureServer } from 'node:http2';
-import * as fs from 'node:fs';
-import * as events from 'node:events';
-import { EventEmitter } from 'node:events';
-import { ServerOptions as HttpsServerOptions, Server as HttpsServer } from 'node:https';
-import * as net from 'node:net';
-import * as url from 'node:url';
-import { URL } from 'node:url';
-import * as stream from 'node:stream';
-import { Duplex, DuplexOptions } from 'node:stream';
-import { F as FetchResult, H as HMRLogger } from './types.d-aGj9QkWt.js';
-export { a as FetchFunction } from './types.d-aGj9QkWt.js';
-import { SecureContextOptions } from 'node:tls';
-import { ZlibOptions } from 'node:zlib';
-import { HMRPayload, CustomPayload } from '../../types/hmrPayload.js';
-export { ConnectedPayload, CustomPayload, ErrorPayload, FullReloadPayload, HMRPayload, PrunePayload, Update, UpdatePayload } from '../../types/hmrPayload.js';
-import { InferCustomEventPayload } from '../../types/customEvent.js';
-export { CustomEventMap, InferCustomEventPayload, InvalidatePayload } from '../../types/customEvent.js';
-import { TransformOptions as esbuild_TransformOptions, TransformResult as esbuild_TransformResult, BuildOptions as esbuild_BuildOptions } from 'esbuild';
-export { TransformOptions as EsbuildTransformOptions, version as esbuildVersion } from 'esbuild';
-import * as PostCSS from 'postcss';
-import { ViteRuntimeOptions, ViteModuleRunner, ViteRuntime, HMRRuntimeConnection } from 'vite/runtime';
-export { GeneralImportGlobOptions, ImportGlobFunction, ImportGlobOptions, KnownAsTypeMap } from '../../types/importGlob.js';
-export { ChunkMetadata } from '../../types/metadata.js';
-import '../../types/hot.js';
+export { parseAst, parseAstAsync } from "npm:rollup/parseAst";
+import * as http from "node:http";
+import { OutgoingHttpHeaders, ClientRequestArgs, IncomingMessage, ClientRequest, Agent, Server, ServerResponse } from "node:http";
+import { Http2SecureServer } from "node:http2";
+import * as fs from "node:fs";
+import * as events from "node:events";
+import { EventEmitter } from "node:events";
+import { ServerOptions as HttpsServerOptions, Server as HttpsServer } from "node:https";
+import * as net from "node:net";
+import * as url from "node:url";
+import { URL } from "node:url";
+import * as stream from "node:stream";
+import { Duplex, DuplexOptions } from "node:stream";
+import { F as FetchResult, H as HMRLogger } from "./types.d-aGj9QkWt.js";
+export { a as FetchFunction } from "./types.d-aGj9QkWt.js";
+import { SecureContextOptions } from "node:tls";
+import { ZlibOptions } from "node:zlib";
+import { HMRPayload, CustomPayload } from "../../types/hmrPayload.js";
+export { ConnectedPayload, CustomPayload, ErrorPayload, FullReloadPayload, HMRPayload, PrunePayload, Update, UpdatePayload } from "../../types/hmrPayload.js";
+import { InferCustomEventPayload } from "../../types/customEvent.js";
+export { CustomEventMap, InferCustomEventPayload, InvalidatePayload } from "../../types/customEvent.js";
+import { TransformOptions as esbuild_TransformOptions, TransformResult as esbuild_TransformResult, BuildOptions as esbuild_BuildOptions } from "esbuild" /* CHECKME: file(s) didn't exist, assuming npm */;
+export { TransformOptions as EsbuildTransformOptions, version as esbuildVersion } from "esbuild" /* CHECKME: file(s) didn't exist, assuming npm */;
+import * as PostCSS from "postcss" /* CHECKME: file(s) didn't exist, assuming npm */;
+import { ViteRuntimeOptions, ViteModuleRunner, ViteRuntime, HMRRuntimeConnection } from "npm:vite/runtime";
+export { GeneralImportGlobOptions, ImportGlobFunction, ImportGlobOptions, KnownAsTypeMap } from "../../types/importGlob.js";
+export { ChunkMetadata } from "../../types/metadata.js";
+import "../../types/hot.js";
 
 interface Alias {
   find: string | RegExp
@@ -3576,3 +3577,5 @@ declare class ServerHMRConnector implements HMRRuntimeConnection {
 }
 
 export { type Alias, type AliasOptions, type AnymatchFn, type AnymatchPattern, type AppType, type AwaitWriteFinishOptions, type BindCLIShortcutsOptions, type BuildOptions, type CLIShortcut, type CSSModulesOptions, type CSSOptions, type CommonServerOptions, type ConfigEnv, Connect, type CorsOptions, type CorsOrigin, type DepOptimizationConfig, type DepOptimizationMetadata, type DepOptimizationOptions, type ESBuildOptions, type ESBuildTransformResult, type ExperimentalOptions, type ExportsData, FSWatcher, type FetchModuleOptions, type FileSystemServeOptions, type FilterPattern, type HMRBroadcaster, type HMRBroadcasterClient, type HMRChannel, type HTMLOptions, type HmrContext, type HmrOptions, type HookHandler, type HtmlTagDescriptor, HttpProxy, type HttpServer, type IndexHtmlTransform, type IndexHtmlTransformContext, type IndexHtmlTransformHook, type IndexHtmlTransformResult, type InlineConfig, type InternalResolveOptions, type JsonOptions, type LegacyOptions, type LibraryFormats, type LibraryOptions, type LightningCSSOptions, type LogErrorOptions, type LogLevel, type LogOptions, type LogType, type Logger, type LoggerOptions, type MainThreadRuntimeOptions, type Manifest, type ManifestChunk, type MapToFunction, type AnymatchMatcher as Matcher, ModuleGraph, ModuleNode, type ModulePreloadOptions, type OptimizedDepInfo, type Plugin, PluginContainer, type PluginHookUtils, type PluginOption, type PreprocessCSSResult, type PreviewOptions, type PreviewServer, type PreviewServerHook, type ProxyOptions, type RenderBuiltAssetUrl, type ResolveFn, type ResolveModulePreloadDependenciesFn, type ResolveOptions, type ResolvedBuildOptions, type ResolvedCSSOptions, type ResolvedConfig, type ResolvedModulePreloadOptions, type ResolvedPreviewOptions, type ResolvedSSROptions, type ResolvedServerOptions, type ResolvedServerUrls, type ResolvedUrl, type ResolvedWorkerOptions, type ResolverFunction, type ResolverObject, type RollupCommonJSOptions, type RollupDynamicImportVarsOptions, type SSROptions, type SSRTarget, type SendOptions, type ServerHMRChannel, ServerHMRConnector, type ServerHook, type ServerOptions, SplitVendorChunkCache, type SsrDepOptimizationOptions, Terser, type TerserOptions, type TransformOptions, type TransformResult, type UserConfig, type UserConfigExport, type UserConfigFn, type UserConfigFnObject, type UserConfigFnPromise, type ViteDevServer, type WatchOptions, WebSocket, WebSocketAlias, type WebSocketClient, type WebSocketCustomListener, WebSocketServer, build, buildErrorMessage, createFilter, createLogger, createServer, createViteRuntime, defineConfig, fetchModule, formatPostcssSourceMap, isCSSRequest, isFileServingAllowed, loadConfigFromFile, loadEnv, mergeAlias, mergeConfig, normalizePath, optimizeDeps, preprocessCSS, preview, resolveConfig, resolveEnvPrefix, rollupVersion, searchForWorkspaceRoot, send, sortUserPlugins, splitVendorChunk, splitVendorChunkPlugin, transformWithEsbuild, VERSION as version };
+
+;export default exports

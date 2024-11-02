@@ -1,53 +1,54 @@
-import * as fs$j from 'node:fs';
-import fs__default, { promises as promises$1 } from 'node:fs';
-import fsp, { lstat as lstat$3, readdir as readdir$5, readlink, realpath as realpath$2 } from 'node:fs/promises';
-import path$n, { win32 as win32$1, posix as posix$1, isAbsolute as isAbsolute$1, join as join$2, extname as extname$1, dirname as dirname$2, relative as relative$2, basename as basename$2 } from 'node:path';
-import { fileURLToPath, URL as URL$3, parse as parse$h, pathToFileURL } from 'node:url';
-import { promisify as promisify$4, format as format$2, inspect } from 'node:util';
-import { performance as performance$1 } from 'node:perf_hooks';
-import { createRequire as createRequire$1, builtinModules } from 'node:module';
-import require$$0$3 from 'tty';
-import require$$0$4, { win32, posix, isAbsolute, resolve as resolve$3, relative as relative$1, basename as basename$1, extname, dirname as dirname$1, join as join$1, sep as sep$1, normalize as normalize$1 } from 'path';
-import esbuild, { transform as transform$1, formatMessages, build as build$3 } from 'esbuild';
-import { CLIENT_ENTRY, OPTIMIZABLE_ENTRY_RE, wildcardHosts, loopbackHosts, FS_PREFIX, CLIENT_PUBLIC_PATH, ENV_PUBLIC_PATH, DEFAULT_ASSETS_INLINE_LIMIT, CSS_LANGS_RE, ESBUILD_MODULES_TARGET, SPECIAL_QUERY_RE, ENV_ENTRY, DEP_VERSION_RE, DEFAULT_MAIN_FIELDS, DEFAULT_EXTENSIONS, KNOWN_ASSET_TYPES, JS_TYPES_RE, METADATA_FILENAME, VITE_PACKAGE_DIR, DEFAULT_DEV_PORT, CLIENT_DIR, VERSION, DEFAULT_PREVIEW_PORT, DEFAULT_ASSETS_RE, DEFAULT_CONFIG_FILES } from '../constants.js';
-import * as require$$0$2 from 'fs';
-import require$$0__default, { lstatSync, readdir as readdir$4, readdirSync, readlinkSync, realpathSync as realpathSync$1, existsSync, readFileSync, statSync as statSync$1 } from 'fs';
-import { EventEmitter as EventEmitter$4 } from 'node:events';
-import Stream$1 from 'node:stream';
-import { StringDecoder } from 'node:string_decoder';
-import { exec, execSync } from 'node:child_process';
-import { createServer as createServer$3, STATUS_CODES, get as get$2 } from 'node:http';
-import { createServer as createServer$2, get as get$1 } from 'node:https';
-import require$$0$5 from 'util';
-import require$$4$1 from 'net';
-import require$$0$7 from 'events';
-import require$$0$9 from 'url';
-import require$$1 from 'http';
-import require$$0$6 from 'stream';
-import require$$2 from 'os';
-import require$$2$1 from 'child_process';
-import os$5 from 'node:os';
-import { createHash as createHash$2 } from 'node:crypto';
-import { promises } from 'node:dns';
-import require$$3$1 from 'crypto';
-import require$$0$8, { createRequire as createRequire$2 } from 'module';
-import assert$1 from 'node:assert';
-import v8 from 'node:v8';
-import { Worker as Worker$1 } from 'node:worker_threads';
-import { Buffer as Buffer$1 } from 'node:buffer';
-import { parseAstAsync, parseAst } from 'rollup/parseAst';
-import * as qs from 'querystring';
-import readline from 'node:readline';
-import zlib$1 from 'zlib';
-import require$$0$a from 'buffer';
-import require$$1$1 from 'https';
-import require$$4$2 from 'tls';
-import require$$4$3 from 'assert';
-import { gzip } from 'node:zlib';
+module = module||{};module.exports=module.exports||{};
+import * as fs$j from "node:fs";
+import fs__default, { promises as promises$1 } from "node:fs";
+import fsp, { lstat as lstat$3, readdir as readdir$5, readlink, realpath as realpath$2 } from "node:fs/promises";
+import path$n, { win32 as win32$1, posix as posix$1, isAbsolute as isAbsolute$1, join as join$2, extname as extname$1, dirname as dirname$2, relative as relative$2, basename as basename$2 } from "node:path";
+import { fileURLToPath, URL as URL$3, parse as parse$h, pathToFileURL } from "node:url";
+import { promisify as promisify$4, format as format$2, inspect } from "node:util";
+import { performance as performance$1 } from "node:perf_hooks";
+import { createRequire as createRequire$1, builtinModules } from "node:module";
+import require$$0$3 from "node:tty";
+import require$$0$4, { win32, posix, isAbsolute, resolve as resolve$3, relative as relative$1, basename as basename$1, extname, dirname as dirname$1, join as join$1, sep as sep$1, normalize as normalize$1 } from "node:path";
+import esbuild, { transform as transform$1, formatMessages, build as build$3 } from "esbuild" /* CHECKME: file(s) didn't exist, assuming npm */;
+import { CLIENT_ENTRY, OPTIMIZABLE_ENTRY_RE, wildcardHosts, loopbackHosts, FS_PREFIX, CLIENT_PUBLIC_PATH, ENV_PUBLIC_PATH, DEFAULT_ASSETS_INLINE_LIMIT, CSS_LANGS_RE, ESBUILD_MODULES_TARGET, SPECIAL_QUERY_RE, ENV_ENTRY, DEP_VERSION_RE, DEFAULT_MAIN_FIELDS, DEFAULT_EXTENSIONS, KNOWN_ASSET_TYPES, JS_TYPES_RE, METADATA_FILENAME, VITE_PACKAGE_DIR, DEFAULT_DEV_PORT, CLIENT_DIR, VERSION, DEFAULT_PREVIEW_PORT, DEFAULT_ASSETS_RE, DEFAULT_CONFIG_FILES } from "../constants.js";
+import * as require$$0$2 from "node:fs";
+import require$$0__default, { lstatSync, readdir as readdir$4, readdirSync, readlinkSync, realpathSync as realpathSync$1, existsSync, readFileSync, statSync as statSync$1 } from "node:fs";
+import { EventEmitter as EventEmitter$4 } from "node:events";
+import Stream$1 from "node:stream";
+import { StringDecoder } from "node:string_decoder";
+import { exec, execSync } from "node:child_process";
+import { createServer as createServer$3, STATUS_CODES, get as get$2 } from "node:http";
+import { createServer as createServer$2, get as get$1 } from "node:https";
+import require$$0$5 from "node:util";
+import require$$4$1 from "node:net";
+import require$$0$7 from "node:events";
+import require$$0$9 from "node:url";
+import require$$1 from "node:http";
+import require$$0$6 from "node:stream";
+import require$$2 from "node:os";
+import require$$2$1 from "node:child_process";
+import os$5 from "node:os";
+import { createHash as createHash$2 } from "node:crypto";
+import { promises } from "node:dns";
+import require$$3$1 from "node:crypto";
+import require$$0$8, { createRequire as createRequire$2 } from "module" /* CHECKME: file(s) didn't exist, assuming npm */;
+import assert$1 from "node:assert";
+import v8 from "node:v8";
+import { Worker as Worker$1 } from "node:worker_threads";
+import { Buffer as Buffer$1 } from "node:buffer";
+import { parseAstAsync, parseAst } from "npm:rollup/parseAst";
+import * as qs from "node:querystring";
+import readline from "node:readline";
+import zlib$1 from "node:zlib";
+import require$$0$a from "node:buffer";
+import require$$1$1 from "node:https";
+import require$$4$2 from "node:tls";
+import require$$4$3 from "node:assert";
+import { gzip } from "node:zlib";
 
-import { fileURLToPath as __cjs_fileURLToPath } from 'node:url';
-import { dirname as __cjs_dirname } from 'node:path';
-import { createRequire as __cjs_createRequire } from 'node:module';
+import { fileURLToPath as __cjs_fileURLToPath } from "node:url";
+import { dirname as __cjs_dirname } from "node:path";
+import { createRequire as __cjs_createRequire } from "node:module";
 
 const __filename = __cjs_fileURLToPath(import.meta.url);
 const __dirname = __cjs_dirname(__filename);
@@ -16237,7 +16238,7 @@ function requireNode$1 () {
 		try {
 			// Optional dependency (as in, doesn't need to be installed, NOT like optionalDependencies in package.json)
 			// eslint-disable-next-line import/no-extraneous-dependencies
-			const supportsColor = require('supports-color');
+			const supportsColor = require('supports-color')/* FIXME: can auto handle deep require (await import('supports-color')) */;
 
 			if (supportsColor && (supportsColor.stderr || supportsColor).level >= 2) {
 				exports.colors = [
@@ -19717,7 +19718,7 @@ function terserPlugin(config) {
   const { maxWorkers, ...terserOptions } = config.build.terserOptions;
   const makeWorker = () => new Worker(
     () => async (terserPath2, code, options) => {
-      const terser = require(terserPath2);
+      const terser = require(terserPath2)/* FIXME: can auto handle deep require (await import(terserPath2)) */;
       return terser.minify(code, options);
     },
     {
@@ -33552,7 +33553,7 @@ const { createRequire, createRequireFromPath } = require$$0$8;
 function req$2 (name, rootFile) {
   const create = createRequire || createRequireFromPath;
   const require = create(rootFile);
-  return require(name)
+  return require(name)/* FIXME: can auto handle deep require (await import(name)) */
 }
 
 var req_1 = req$2;
@@ -37367,8 +37368,8 @@ const makeScssWorker = (resolvers, alias, maxWorkers, packageName) => {
   };
   const worker = new WorkerWithFallback(
     () => async (sassPath, data, options) => {
-      const sass = require(sassPath);
-      const path2 = require("node:path");
+      const sass = require(sassPath)/* FIXME: can auto handle deep require (await import(sassPath)) */;
+      const path2 = require("node:path")/* FIXME: can auto handle deep require (await import("node:path")) */;
       const _internalImporter = (url, importer2, done) => {
         internalImporter(url, importer2, options.filename).then(
           (data2) => done?.(data2)
@@ -37429,11 +37430,11 @@ const makeModernScssWorker = (resolvers, alias, maxWorkers) => {
   };
   const worker = new WorkerWithFallback(
     () => async (sassPath, data, options) => {
-      const sass = require(sassPath);
-      const path2 = require("node:path");
+      const sass = require(sassPath)/* FIXME: can auto handle deep require (await import(sassPath)) */;
+      const path2 = require("node:path")/* FIXME: can auto handle deep require (await import("node:path")) */;
       const { fileURLToPath: fileURLToPath2, pathToFileURL: pathToFileURL2 } = (
         // eslint-disable-next-line no-restricted-globals
-        require("node:url")
+        require("node:url")/* FIXME: can auto handle deep require (await import("node:url")) */
       );
       const sassOptions = { ...options };
       sassOptions.url = pathToFileURL2(options.filename);
@@ -37664,8 +37665,8 @@ const makeLessWorker = (resolvers, alias, maxWorkers) => {
   };
   const worker = new WorkerWithFallback(
     () => {
-      const fsp2 = require("node:fs/promises");
-      const path2 = require("node:path");
+      const fsp2 = require("node:fs/promises")/* FIXME: can auto handle deep require (await import("node:fs/promises")) */;
+      const path2 = require("node:path")/* FIXME: can auto handle deep require (await import("node:path")) */;
       let ViteLessManager;
       const createViteLessPlugin = (less, rootFile) => {
         const { FileManager } = less;
@@ -37701,7 +37702,7 @@ const makeLessWorker = (resolvers, alias, maxWorkers) => {
         };
       };
       return async (lessPath, content, options) => {
-        const nodeLess = require(lessPath);
+        const nodeLess = require(lessPath)/* FIXME: can auto handle deep require (await import(lessPath)) */;
         const viteResolverPlugin = createViteLessPlugin(
           nodeLess,
           options.filename
@@ -37792,7 +37793,7 @@ const makeStylWorker = (maxWorkers) => {
   const worker = new WorkerWithFallback(
     () => {
       return async (stylusPath, content, root, options) => {
-        const nodeStylus = require(stylusPath);
+        const nodeStylus = require(stylusPath)/* FIXME: can auto handle deep require (await import(stylusPath)) */;
         const ref = nodeStylus(content, options);
         if (options.define) {
           for (const key in options.define) {
@@ -54651,7 +54652,7 @@ bufferUtil$1.exports = {
 /* istanbul ignore else  */
 if (!process.env.WS_NO_BUFFER_UTIL) {
   try {
-    const bufferUtil = require('bufferutil');
+    const bufferUtil = require('bufferutil')/* FIXME: can auto handle deep require (await import('bufferutil')) */;
 
     bufferUtil$1.exports.mask = function (source, mask, output, offset, length) {
       if (length < 48) _mask(source, mask, output, offset, length);
@@ -55379,7 +55380,7 @@ if (isUtf8) {
   };
 } /* istanbul ignore else  */ else if (!process.env.WS_NO_UTF_8_VALIDATE) {
   try {
-    const isValidUTF8 = require('utf-8-validate');
+    const isValidUTF8 = require('utf-8-validate')/* FIXME: can auto handle deep require (await import('utf-8-validate')) */;
 
     validation.exports.isValidUTF8 = function (buf) {
       return buf.length < 32 ? _isValidUTF8(buf) : isValidUTF8(buf);
@@ -66765,3 +66766,5 @@ function optimizeDepsDisabledBackwardCompatibility(resolved, optimizeDeps, optim
 }
 
 export { colors$1 as A, getDefaultExportFromCjs as B, commonjsGlobal as C, index$1 as D, index as E, build$1 as F, preview$1 as G, arraify as a, build as b, createServer as c, defineConfig as d, preprocessCSS as e, formatPostcssSourceMap as f, buildErrorMessage as g, fetchModule as h, isInNodeModules$1 as i, mergeAlias as j, createFilter as k, loadConfigFromFile as l, mergeConfig as m, normalizePath$3 as n, optimizeDeps as o, preview as p, rollupVersion as q, resolveConfig as r, sortUserPlugins as s, transformWithEsbuild as t, send as u, createLogger as v, searchForWorkspaceRoot as w, isFileServingAllowed as x, loadEnv as y, resolveEnvPrefix as z };
+
+;export default module.exports

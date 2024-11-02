@@ -1,14 +1,15 @@
-import { C as commonjsGlobal, B as getDefaultExportFromCjs } from './dep-BWSbWtLw.js';
-import require$$0__default from 'fs';
-import require$$0 from 'postcss';
-import require$$0$1 from 'path';
-import require$$3 from 'crypto';
-import require$$0$2 from 'util';
-import { l as lib } from './dep-IQS-Za7F.js';
+module = module||{};module.exports=module.exports||{};
+import { C as commonjsGlobal, B as getDefaultExportFromCjs } from "./dep-BWSbWtLw.js";
+import require$$0__default from "node:fs";
+import require$$0 from "postcss" /* CHECKME: file(s) didn't exist, assuming npm */;
+import require$$0$1 from "node:path";
+import require$$3 from "node:crypto";
+import require$$0$2 from "node:util";
+import { l as lib } from "./dep-IQS-Za7F.js";
 
-import { fileURLToPath as __cjs_fileURLToPath } from 'node:url';
-import { dirname as __cjs_dirname } from 'node:path';
-import { createRequire as __cjs_createRequire } from 'node:module';
+import { fileURLToPath as __cjs_fileURLToPath } from "node:url";
+import { dirname as __cjs_dirname } from "node:path";
+import { createRequire as __cjs_createRequire } from "node:module";
 
 const __filename = __cjs_fileURLToPath(import.meta.url);
 const __dirname = __cjs_dirname(__filename);
@@ -2223,8 +2224,8 @@ var unesc = {exports: {}};
 	// https://mathiasbynens.be/notes/css-escapes
 
 	/**
-	 * 
-	 * @param {string} str 
+	 *
+	 * @param {string} str
 	 * @returns {[string, number]|undefined}
 	 */
 	function gobbleHex(str) {
@@ -2290,7 +2291,7 @@ var unesc = {exports: {}};
 	  }
 	  return ret;
 	}
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (unesc, unesc.exports));
 
 var unescExports = unesc.exports;
@@ -2314,7 +2315,7 @@ var getProp = {exports: {}};
 	  }
 	  return obj;
 	}
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (getProp, getProp.exports));
 
 var getPropExports = getProp.exports;
@@ -2337,7 +2338,7 @@ var ensureObject = {exports: {}};
 	    obj = obj[prop];
 	  }
 	}
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (ensureObject, ensureObject.exports));
 
 var ensureObjectExports = ensureObject.exports;
@@ -2364,7 +2365,7 @@ var stripComments = {exports: {}};
 	  s = s + str.slice(lastEnd);
 	  return s;
 	}
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (stripComments, stripComments.exports));
 
 var stripCommentsExports = stripComments.exports;
@@ -2572,7 +2573,7 @@ function _interopRequireDefault$3(obj) { return obj && obj.__esModule ? obj : { 
 	  return Node;
 	}();
 	exports["default"] = Node;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (node$1, node$1.exports));
 
 var nodeExports = node$1.exports;
@@ -2725,7 +2726,7 @@ types.UNIVERSAL = UNIVERSAL;
 	   * Return the most specific node at the line and column number given.
 	   * The source location is based on the original parsed location, locations aren't
 	   * updated as selector nodes are mutated.
-	   * 
+	   *
 	   * Note that this location is relative to the location of the first character
 	   * of the selector, and not the location of the selector in the overall document
 	   * when used in conjunction with postcss.
@@ -2913,7 +2914,7 @@ types.UNIVERSAL = UNIVERSAL;
 	  return Container;
 	}(_node["default"]);
 	exports["default"] = Container;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (container, container.exports));
 
 var containerExports = container.exports;
@@ -2961,7 +2962,7 @@ var containerExports = container.exports;
 	  return Root;
 	}(_container["default"]);
 	exports["default"] = Root;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (root$1, root$1.exports));
 
 var rootExports = root$1.exports;
@@ -2988,7 +2989,7 @@ var selector$1 = {exports: {}};
 	  return Selector;
 	}(_container["default"]);
 	exports["default"] = Selector;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (selector$1, selector$1.exports));
 
 var selectorExports = selector$1.exports;
@@ -3153,7 +3154,7 @@ var cssesc_1 = cssesc;
 	  return ClassName;
 	}(_node["default"]);
 	exports["default"] = ClassName;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (className$1, className$1.exports));
 
 var classNameExports = className$1.exports;
@@ -3180,7 +3181,7 @@ var comment$2 = {exports: {}};
 	  return Comment;
 	}(_node["default"]);
 	exports["default"] = Comment;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (comment$2, comment$2.exports));
 
 var commentExports = comment$2.exports;
@@ -3211,7 +3212,7 @@ var id$1 = {exports: {}};
 	  return ID;
 	}(_node["default"]);
 	exports["default"] = ID;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (id$1, id$1.exports));
 
 var idExports = id$1.exports;
@@ -3298,7 +3299,7 @@ var namespace = {exports: {}};
 	  return Namespace;
 	}(_node["default"]);
 	exports["default"] = Namespace;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (namespace, namespace.exports));
 
 var namespaceExports = namespace.exports;
@@ -3323,7 +3324,7 @@ var namespaceExports = namespace.exports;
 	  return Tag;
 	}(_namespace["default"]);
 	exports["default"] = Tag;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (tag$1, tag$1.exports));
 
 var tagExports = tag$1.exports;
@@ -3350,7 +3351,7 @@ var string$1 = {exports: {}};
 	  return String;
 	}(_node["default"]);
 	exports["default"] = String;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (string$1, string$1.exports));
 
 var stringExports = string$1.exports;
@@ -3382,7 +3383,7 @@ var pseudo$1 = {exports: {}};
 	  return Pseudo;
 	}(_container["default"]);
 	exports["default"] = Pseudo;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (pseudo$1, pseudo$1.exports));
 
 var pseudoExports = pseudo$1.exports;
@@ -3842,7 +3843,7 @@ var node = require$$0$2.deprecate;
 	}, _CSSESC_QUOTE_OPTIONS);
 	function defaultAttrConcat(attrValue, attrSpaces) {
 	  return "" + attrSpaces.before + attrValue + attrSpaces.after;
-	} 
+	}
 } (attribute$1));
 
 var universal$1 = {exports: {}};
@@ -3868,7 +3869,7 @@ var universal$1 = {exports: {}};
 	  return Universal;
 	}(_namespace["default"]);
 	exports["default"] = Universal;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (universal$1, universal$1.exports));
 
 var universalExports = universal$1.exports;
@@ -3895,7 +3896,7 @@ var combinator$2 = {exports: {}};
 	  return Combinator;
 	}(_node["default"]);
 	exports["default"] = Combinator;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (combinator$2, combinator$2.exports));
 
 var combinatorExports = combinator$2.exports;
@@ -3923,7 +3924,7 @@ var nesting$1 = {exports: {}};
 	  return Nesting;
 	}(_node["default"]);
 	exports["default"] = Nesting;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (nesting$1, nesting$1.exports));
 
 var nestingExports = nesting$1.exports;
@@ -3939,7 +3940,7 @@ var sortAscending = {exports: {}};
 	    return a - b;
 	  });
 	}
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (sortAscending, sortAscending.exports));
 
 var sortAscendingExports = sortAscending.exports;
@@ -4253,7 +4254,7 @@ tokenTypes.combinator = combinator$1;
 	    start = end;
 	  }
 	  return tokens;
-	} 
+	}
 } (tokenize));
 
 (function (module, exports) {
@@ -5268,7 +5269,7 @@ tokenTypes.combinator = combinator$1;
 	  return Parser;
 	}();
 	exports["default"] = Parser;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (parser, parser.exports));
 
 var parserExports = parser.exports;
@@ -5442,7 +5443,7 @@ var parserExports = parser.exports;
 	  return Processor;
 	}();
 	exports["default"] = Processor;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (processor, processor.exports));
 
 var processorExports = processor.exports;
@@ -5594,7 +5595,7 @@ function isNamespace(node) {
 	  if (key === "default" || key === "__esModule") return;
 	  if (key in exports && exports[key] === _guards[key]) return;
 	  exports[key] = _guards[key];
-	}); 
+	});
 } (selectors));
 
 (function (module, exports) {
@@ -5613,7 +5614,7 @@ function isNamespace(node) {
 	delete parser.__esModule;
 	var _default = parser;
 	exports["default"] = _default;
-	module.exports = exports.default; 
+	module.exports = exports.default;
 } (dist, dist.exports));
 
 var distExports = dist.exports;
@@ -5946,9 +5947,9 @@ function localizeDeclaration(declaration, context) {
     function. These are still valid animation names, so as long as there is a property that accepts
     a keyword, it is given priority. Only when all the properties that can take a keyword are
     exhausted can the animation name be set to the keyword. I.e.
-  
+
     animation: infinite infinite;
-  
+
     The animation will repeat an infinite number of times from the first argument, and will have an
     animation name of infinite from the second.
     */
@@ -6841,3 +6842,5 @@ var index$1 = /*#__PURE__*/_mergeNamespaces({
 }, [buildExports]);
 
 export { index$1 as i };
+
+;export default module.exports

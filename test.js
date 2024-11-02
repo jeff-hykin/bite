@@ -1,6 +1,7 @@
-const { existsSync } = require('node:fs');
-const path = require('node:path');
-const { platform, arch, report } = require('node:process');
+module = module||{};module.exports=module.exports||{};
+import { existsSync } from "node:fs"
+import path from "node:path"
+import { platform, arch, report } from "node:process"
 
 const isMusl = () => !report.getReport().header.glibcVersionRuntime;
 
@@ -42,7 +43,7 @@ const packageBase = getPackageBase();
 const localName = `./rollup.${packageBase}.node`;
 const requireWithFriendlyError = id => {
 	try {
-		return require(id);
+		return require(id)/* FIXME: can auto handle deep require (await import(id)) */;
 	} catch (error) {
 		if (
 			platform === 'win32' &&
@@ -107,3 +108,7 @@ module.exports.parseAsync = parseAsync;
 module.exports.xxhashBase64Url = xxhashBase64Url;
 module.exports.xxhashBase36 = xxhashBase36;
 module.exports.xxhashBase16 = xxhashBase16;
+
+export { parse, parseAsync, xxhashBase64Url, xxhashBase36, xxhashBase16 };
+
+;export default module.exports
