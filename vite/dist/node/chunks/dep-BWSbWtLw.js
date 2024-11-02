@@ -36993,7 +36993,7 @@ function createCachedImport(imp) {
 }
 const importPostcssImport = createCachedImport(() => import('./dep-GkhNNjoY.js').then(function (n) { return n.i; }));
 const importPostcssModules = createCachedImport(() => import('./dep-BASfdaBA.js').then(function (n) { return n.i; }));
-const importPostcss = createCachedImport(() => import('postcss'));
+const importPostcss = createCachedImport(() => import('https://esm.sh/postcss@8.4.47'));
 const preprocessorWorkerControllerCache = /* @__PURE__ */ new WeakMap();
 let alwaysFakeWorkerWorkerControllerCache;
 async function preprocessCSS(code, filename, config) {
@@ -37949,7 +37949,7 @@ const preprocessorSet = /* @__PURE__ */ new Set([
 function isPreProcessor(lang) {
   return lang && preprocessorSet.has(lang);
 }
-const importLightningCSS = createCachedImport(() => import('lightningcss'));
+const importLightningCSS = createCachedImport(() => import(`https://esm.sh/lightningcss@1.27.0#${Math.random()}`));
 async function compileLightningCSS(id, src, config, urlReplacer) {
   const deps = /* @__PURE__ */ new Set();
   const filename = cleanUrl(path$n.relative(config.root, id));
@@ -47612,7 +47612,7 @@ async function bundleWorkerEntry(config, id) {
       `Circular worker imports detected. Vite does not support it. Import chain: ${newBundleChain.map((id2) => prettifyUrl(id2, config.root)).join(" -> ")}`
     );
   }
-  const { rollup } = await import('rollup');
+  const { rollup } = await import('https://esm.sh/@rollup/wasm-node@4.24.3');
   const { plugins, rollupOptions, format } = config.worker;
   const bundle = await rollup({
     ...rollupOptions,

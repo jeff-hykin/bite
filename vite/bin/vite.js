@@ -1,12 +1,12 @@
 #!/usr/bin/env node
 import { performance } from "node:perf_hooks"
 
-if (!import.meta.url.includes('node_modules')) {
-  try {
-    // only available as dev dependency
-    await import('source-map-support').then((r) => r.default.install())
-  } catch (e) {}
-}
+// if (!import.meta.url.includes('node_modules')) {
+//   try {
+//     // only available as dev dependency
+//     await import('source-map-support').then((r) => r.default.install())
+//   } catch (e) {}
+// }
 
 globalThis.__vite_start_time = performance.now()
 
