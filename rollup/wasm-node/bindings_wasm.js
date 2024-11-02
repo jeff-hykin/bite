@@ -3,7 +3,7 @@ module = module||{};module.exports=module.exports||{};
 let imports = {};
 imports['__wbindgen_placeholder__'] = module.exports;
 let wasm;
-const { TextDecoder, TextEncoder } = require(`util`)/* FIXME: can't auto handle deep require (await import(`util`)) */;
+import { TextDecoder, TextEncoder } from "node:util";
 
 const heap = new Array(128).fill(undefined);
 
