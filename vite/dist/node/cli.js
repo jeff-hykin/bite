@@ -10,7 +10,7 @@ import "node:util";
 import "node:module";
 import "node:tty";
 import "node:path";
-import "https://esm.sh/esbuild@0.24.0" /* CHECKME: file(s) didn't exist, assuming npm */;
+import "https://esm.sh/esbuild@0.24.0"
 import "node:fs";
 import "node:events";
 import "node:stream";
