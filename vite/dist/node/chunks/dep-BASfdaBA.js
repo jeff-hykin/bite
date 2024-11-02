@@ -1,7 +1,6 @@
-module = module||{};module.exports=module.exports||{};
 import { C as commonjsGlobal, B as getDefaultExportFromCjs } from "./dep-BWSbWtLw.js";
 import require$$0__default from "node:fs";
-import require$$0 from "postcss" /* CHECKME: file(s) didn't exist, assuming npm */;
+import require$$0 from "https://esm.sh/postcss@8.4.47" /* CHECKME: file(s) didn't exist, assuming npm */;
 import require$$0$1 from "node:path";
 import require$$3 from "node:crypto";
 import require$$0$2 from "node:util";
@@ -6842,5 +6841,3 @@ var index$1 = /*#__PURE__*/_mergeNamespaces({
 }, [buildExports]);
 
 export { index$1 as i };
-
-;export default module.exports

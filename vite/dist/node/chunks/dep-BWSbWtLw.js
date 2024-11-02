@@ -9,7 +9,7 @@ import { performance as performance$1 } from "node:perf_hooks";
 import { createRequire as createRequire$1, builtinModules } from "node:module";
 import require$$0$3 from "node:tty";
 import require$$0$4, { win32, posix, isAbsolute, resolve as resolve$3, relative as relative$1, basename as basename$1, extname, dirname as dirname$1, join as join$1, sep as sep$1, normalize as normalize$1 } from "node:path";
-import esbuild, { transform as transform$1, formatMessages, build as build$3 } from "esbuild" /* CHECKME: file(s) didn't exist, assuming npm */;
+import esbuild, { transform as transform$1, formatMessages, build as build$3 } from "https://esm.sh/esbuild@0.24.0" /* CHECKME: file(s) didn't exist, assuming npm */;
 import { CLIENT_ENTRY, OPTIMIZABLE_ENTRY_RE, wildcardHosts, loopbackHosts, FS_PREFIX, CLIENT_PUBLIC_PATH, ENV_PUBLIC_PATH, DEFAULT_ASSETS_INLINE_LIMIT, CSS_LANGS_RE, ESBUILD_MODULES_TARGET, SPECIAL_QUERY_RE, ENV_ENTRY, DEP_VERSION_RE, DEFAULT_MAIN_FIELDS, DEFAULT_EXTENSIONS, KNOWN_ASSET_TYPES, JS_TYPES_RE, METADATA_FILENAME, VITE_PACKAGE_DIR, DEFAULT_DEV_PORT, CLIENT_DIR, VERSION, DEFAULT_PREVIEW_PORT, DEFAULT_ASSETS_RE, DEFAULT_CONFIG_FILES } from "../constants.js";
 import * as require$$0$2 from "node:fs";
 import require$$0__default, { lstatSync, readdir as readdir$4, readdirSync, readlinkSync, realpathSync as realpathSync$1, existsSync, readFileSync, statSync as statSync$1 } from "node:fs";
@@ -31,7 +31,7 @@ import os$5 from "node:os";
 import { createHash as createHash$2 } from "node:crypto";
 import { promises } from "node:dns";
 import require$$3$1 from "node:crypto";
-import require$$0$8, { createRequire as createRequire$2 } from "module" /* CHECKME: file(s) didn't exist, assuming npm */;
+import require$$0$8, { createRequire as createRequire$2 } from "node:module" /* CHECKME: file(s) didn't exist, assuming npm */;
 import assert$1 from "node:assert";
 import v8 from "node:v8";
 import { Worker as Worker$1 } from "node:worker_threads";
@@ -724,7 +724,7 @@ var constants$6 = {
 	    output = `(?:^(?!${output}).*$)`;
 	  }
 	  return output;
-	}; 
+	};
 } (utils$k));
 
 const utils$j = utils$k;
@@ -2888,12 +2888,12 @@ var commondir = function (basedir, relfiles) {
     else {
         var files = basedir;
     }
-    
+
     var res = files.slice(1).reduce(function (ps, file) {
         if (!file.match(/^([A-Za-z]:)?\/|\\/)) {
             throw new Error('relative path without a basedir');
         }
-        
+
         var xs = file.split(/\/+|\\+/);
         for (
             var i = 0;
@@ -2902,7 +2902,7 @@ var commondir = function (basedir, relfiles) {
         );
         return ps.slice(0, i);
     }, files[0].split(/\/+|\\+/));
-    
+
     // Windows correctly handles paths with forward-slashes
     return res.length > 1 ? res.join('/') : '/'
 };
@@ -3077,7 +3077,7 @@ function expand$3(str, isTop) {
     ? expand$3(m.post, false)
     : [''];
 
-  if (/\$$/.test(m.pre)) {    
+  if (/\$$/.test(m.pre)) {
     for (var k = 0; k < post.length; k++) {
       var expansion = pre+ '{' + m.body + '}' + post[k];
       expansions.push(expansion);
@@ -3789,7 +3789,7 @@ class AST {
                         const aps = addPatternStart;
                         // check if we have a possibility of matching . or ..,
                         // and prevent that.
-                        const needNoTrav = 
+                        const needNoTrav =
                         // dots are allowed, and the pattern starts with [ or .
                         (dot && aps.has(src.charAt(0))) ||
                             // the pattern starts with \., and then [ or .
@@ -6202,11 +6202,11 @@ class LRUCache {
             b.__abortController instanceof AC);
     }
     async fetch(k, fetchOptions = {}) {
-        const { 
+        const {
         // get options
-        allowStale = this.allowStale, updateAgeOnGet = this.updateAgeOnGet, noDeleteOnStaleGet = this.noDeleteOnStaleGet, 
+        allowStale = this.allowStale, updateAgeOnGet = this.updateAgeOnGet, noDeleteOnStaleGet = this.noDeleteOnStaleGet,
         // set options
-        ttl = this.ttl, noDisposeOnSet = this.noDisposeOnSet, size = 0, sizeCalculation = this.sizeCalculation, noUpdateTTL = this.noUpdateTTL, 
+        ttl = this.ttl, noDisposeOnSet = this.noDisposeOnSet, size = 0, sizeCalculation = this.sizeCalculation, noUpdateTTL = this.noUpdateTTL,
         // fetch exclusive options
         noDeleteOnFetchRejection = this.noDeleteOnFetchRejection, allowStaleOnFetchRejection = this.allowStaleOnFetchRejection, ignoreFetchAbort = this.ignoreFetchAbort, allowStaleOnFetchAbort = this.allowStaleOnFetchAbort, context, forceRefresh = false, status, signal, } = fetchOptions;
         if (!this.#hasFetchMethod) {
@@ -11092,7 +11092,7 @@ class Chunk {
 			// '  test'.trim()
 			//     split   -> '  ' + 'test'
 			//   ✔️ edit    -> '' + 'test'
-			//   ✖️ edit    -> 'test' + '' 
+			//   ✖️ edit    -> 'test' + ''
 			// TODO is this block necessary?...
 			newChunk.edit('', false);
 			this.content = '';
@@ -16194,7 +16194,7 @@ function requireBrowser$1 () {
 			} catch (error) {
 				return '[UnexpectedJSONParseError]: ' + error.message;
 			}
-		}; 
+		};
 	} (browser$3, browser$3.exports));
 	return browser$3.exports;
 }
@@ -16236,90 +16236,90 @@ function requireNode$1 () {
 		exports.colors = [6, 2, 3, 4, 5, 1];
 
 		try {
-			// Optional dependency (as in, doesn't need to be installed, NOT like optionalDependencies in package.json)
-			// eslint-disable-next-line import/no-extraneous-dependencies
-			const supportsColor = require('supports-color')/* FIXME: can auto handle deep require (await import('supports-color')) */;
+			// // Optional dependency (as in, doesn't need to be installed, NOT like optionalDependencies in package.json)
+			// // eslint-disable-next-line import/no-extraneous-dependencies
+			// const supportsColor = require('supports-color');
 
-			if (supportsColor && (supportsColor.stderr || supportsColor).level >= 2) {
-				exports.colors = [
-					20,
-					21,
-					26,
-					27,
-					32,
-					33,
-					38,
-					39,
-					40,
-					41,
-					42,
-					43,
-					44,
-					45,
-					56,
-					57,
-					62,
-					63,
-					68,
-					69,
-					74,
-					75,
-					76,
-					77,
-					78,
-					79,
-					80,
-					81,
-					92,
-					93,
-					98,
-					99,
-					112,
-					113,
-					128,
-					129,
-					134,
-					135,
-					148,
-					149,
-					160,
-					161,
-					162,
-					163,
-					164,
-					165,
-					166,
-					167,
-					168,
-					169,
-					170,
-					171,
-					172,
-					173,
-					178,
-					179,
-					184,
-					185,
-					196,
-					197,
-					198,
-					199,
-					200,
-					201,
-					202,
-					203,
-					204,
-					205,
-					206,
-					207,
-					208,
-					209,
-					214,
-					215,
-					220,
-					221
-				];
-			}
+			// if (supportsColor && (supportsColor.stderr || supportsColor).level >= 2) {
+			// 	exports.colors = [
+			// 		20,
+			// 		21,
+			// 		26,
+			// 		27,
+			// 		32,
+			// 		33,
+			// 		38,
+			// 		39,
+			// 		40,
+			// 		41,
+			// 		42,
+			// 		43,
+			// 		44,
+			// 		45,
+			// 		56,
+			// 		57,
+			// 		62,
+			// 		63,
+			// 		68,
+			// 		69,
+			// 		74,
+			// 		75,
+			// 		76,
+			// 		77,
+			// 		78,
+			// 		79,
+			// 		80,
+			// 		81,
+			// 		92,
+			// 		93,
+			// 		98,
+			// 		99,
+			// 		112,
+			// 		113,
+			// 		128,
+			// 		129,
+			// 		134,
+			// 		135,
+			// 		148,
+			// 		149,
+			// 		160,
+			// 		161,
+			// 		162,
+			// 		163,
+			// 		164,
+			// 		165,
+			// 		166,
+			// 		167,
+			// 		168,
+			// 		169,
+			// 		170,
+			// 		171,
+			// 		172,
+			// 		173,
+			// 		178,
+			// 		179,
+			// 		184,
+			// 		185,
+			// 		196,
+			// 		197,
+			// 		198,
+			// 		199,
+			// 		200,
+			// 		201,
+			// 		202,
+			// 		203,
+			// 		204,
+			// 		205,
+			// 		206,
+			// 		207,
+			// 		208,
+			// 		209,
+			// 		214,
+			// 		215,
+			// 		220,
+			// 		221
+			// 	];
+			// }
 		} catch (error) {
 			// Swallow - we only care if `supports-color` is available; it doesn't have to be.
 		}
@@ -16469,7 +16469,7 @@ function requireNode$1 () {
 		formatters.O = function (v) {
 			this.inspectOpts.colors = this.useColors;
 			return util.inspect(v, this.inspectOpts);
-		}; 
+		};
 	} (node$1, node$1.exports));
 	return node$1.exports;
 }
@@ -20902,7 +20902,7 @@ var convertSourceMap$1 = {};
 	exports.generateMapFileComment = function (file, options) {
 	  var data = 'sourceMappingURL=' + file;
 	  return options && options.multiline ? '/*# ' + data + ' */' : '//# ' + data;
-	}; 
+	};
 } (convertSourceMap$1));
 
 var convertSourceMap = /*@__PURE__*/getDefaultExportFromCjs(convertSourceMap$1);
@@ -21485,7 +21485,7 @@ var utils$f = {};
 
 	  flat(args);
 	  return result;
-	}; 
+	};
 } (utils$f));
 
 const utils$e = utils$f;
@@ -23860,7 +23860,7 @@ var fs$g = {};
 	    }
 	    return Object.assign(Object.assign({}, exports.FILE_SYSTEM_ADAPTER), fsMethods);
 	}
-	exports.createFileSystemAdapter = createFileSystemAdapter; 
+	exports.createFileSystemAdapter = createFileSystemAdapter;
 } (fs$g));
 
 Object.defineProperty(settings$3, "__esModule", { value: true });
@@ -24213,7 +24213,7 @@ var fs$c = {};
 	    }
 	    return Object.assign(Object.assign({}, exports.FILE_SYSTEM_ADAPTER), fsMethods);
 	}
-	exports.createFileSystemAdapter = createFileSystemAdapter; 
+	exports.createFileSystemAdapter = createFileSystemAdapter;
 } (fs$c));
 
 Object.defineProperty(settings$2, "__esModule", { value: true });
@@ -25584,7 +25584,7 @@ var settings = {};
 	        return Object.assign(Object.assign({}, exports.DEFAULT_FILE_SYSTEM_ADAPTER), methods);
 	    }
 	}
-	exports.default = Settings; 
+	exports.default = Settings;
 } (settings));
 
 const taskManager = tasks;
@@ -29446,7 +29446,7 @@ class Document {
             replacer = undefined;
         }
         const { aliasDuplicateObjects, anchorPrefix, flow, keepUndefined, onTagObj, tag } = options ?? {};
-        const { onAnchor, setAnchors, sourceObjects } = createNodeAnchors(this, 
+        const { onAnchor, setAnchors, sourceObjects } = createNodeAnchors(this,
         // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
         anchorPrefix || 'a');
         const ctx = {
@@ -37369,7 +37369,7 @@ const makeScssWorker = (resolvers, alias, maxWorkers, packageName) => {
   const worker = new WorkerWithFallback(
     () => async (sassPath, data, options) => {
       const sass = require(sassPath)/* FIXME: can auto handle deep require (await import(sassPath)) */;
-      const path2 = require("node:path")/* FIXME: can auto handle deep require (await import("node:path")) */;
+      const path2 = path$n;
       const _internalImporter = (url, importer2, done) => {
         internalImporter(url, importer2, options.filename).then(
           (data2) => done?.(data2)
@@ -37431,7 +37431,7 @@ const makeModernScssWorker = (resolvers, alias, maxWorkers) => {
   const worker = new WorkerWithFallback(
     () => async (sassPath, data, options) => {
       const sass = require(sassPath)/* FIXME: can auto handle deep require (await import(sassPath)) */;
-      const path2 = require("node:path")/* FIXME: can auto handle deep require (await import("node:path")) */;
+      const path2 = path$n;
       const { fileURLToPath: fileURLToPath2, pathToFileURL: pathToFileURL2 } = (
         // eslint-disable-next-line no-restricted-globals
         require("node:url")/* FIXME: can auto handle deep require (await import("node:url")) */
@@ -37665,8 +37665,8 @@ const makeLessWorker = (resolvers, alias, maxWorkers) => {
   };
   const worker = new WorkerWithFallback(
     () => {
-      const fsp2 = require("node:fs/promises")/* FIXME: can auto handle deep require (await import("node:fs/promises")) */;
-      const path2 = require("node:path")/* FIXME: can auto handle deep require (await import("node:path")) */;
+      const fsp2 = fsp;
+      const path2 = path$n;
       let ViteLessManager;
       const createViteLessPlugin = (less, rootFile) => {
         const { FileManager } = less;
@@ -39455,7 +39455,7 @@ function requireDebug () {
 		function coerce(val) {
 		  if (val instanceof Error) return val.stack || val.message;
 		  return val;
-		} 
+		}
 	} (debug$f, debug$f.exports));
 	return debug$f.exports;
 }
@@ -39650,7 +39650,7 @@ function requireBrowser () {
 		  try {
 		    return window.localStorage;
 		  } catch (e) {}
-		} 
+		}
 	} (browser, browser.exports));
 	return browser.exports;
 }
@@ -39910,7 +39910,7 @@ function requireNode () {
 		 * Enable namespaces listed in `process.env.DEBUG` initially.
 		 */
 
-		exports.enable(load()); 
+		exports.enable(load());
 	} (node, node.exports));
 	return node.exports;
 }
@@ -41120,7 +41120,7 @@ var utilsMerge = {exports: {}};
 	    }
 	  }
 	  return a;
-	}; 
+	};
 } (utilsMerge));
 
 var utilsMergeExports = utilsMerge.exports;
@@ -42658,7 +42658,7 @@ var constants$1 = {};
 	exports.isWindows = platform === 'win32';
 	exports.isMacos = platform === 'darwin';
 	exports.isLinux = platform === 'linux';
-	exports.isIBMi = os.type() === 'OS400'; 
+	exports.isIBMi = os.type() === 'OS400';
 } (constants$1));
 
 const fs$7 = require$$0__default;
@@ -43611,7 +43611,7 @@ _watchWithFsEvents(watchPath, realPath, transform, globFilter) {
   if (this.fsw.closed || this.fsw._isIgnored(watchPath)) return;
   const opts = this.fsw.options;
   const watchCallback = async (fullPath, flags, info) => {
-    // PATCH: bypass the callback for better perf when fullPath hit the ignored file list 
+    // PATCH: bypass the callback for better perf when fullPath hit the ignored file list
     if (this.fsw.closed || this.fsw._isIgnored(fullPath)) return;
     if (
       opts.depth !== undefined &&
@@ -45483,7 +45483,7 @@ function launchEditor (file, specifiedEditor, onErrorCallback) {
         return `^"${str}^"`
       } else if (str.includes(' ')) {
         return `"${str}"`
-      } 
+      }
       return str
     }
     const launchCommand = [editor, ...args.map(escapeCmdArgs)]
@@ -59769,7 +59769,7 @@ var eventemitter3 = {exports: {}};
 	//
 	{
 	  module.exports = EventEmitter;
-	} 
+	}
 } (eventemitter3));
 
 var eventemitter3Exports = eventemitter3.exports;
@@ -59864,7 +59864,7 @@ var requiresPort = function required(port, protocol) {
 	  if (options.auth) {
 	    outgoing.auth = options.auth;
 	  }
-	  
+
 	  if (options.ca) {
 	      outgoing.ca = options.ca;
 	  }
@@ -61444,7 +61444,7 @@ var wsIncoming = {
 	  if(i === false) throw new Error('No such pass');
 
 	  passes.splice(i++, 0, callback);
-	}; 
+	};
 } (httpProxy$3));
 
 var httpProxyExports = httpProxy$3.exports;
@@ -61518,12 +61518,12 @@ var httpProxy$2 = ProxyServer;
 /*!
  * Caron dimonio, con occhi di bragia
  * loro accennando, tutte le raccoglie;
- * batte col remo qualunque s’adagia 
+ * batte col remo qualunque s’adagia
  *
  * Charon the demon, with the eyes of glede,
  * Beckoning to them, collects them all together,
  * Beats with his oar whoever lags behind
- *          
+ *
  *          Dante - The Divine Comedy (Canto III)
  */
 

@@ -8,7 +8,7 @@ if (!import.meta.url.includes('node_modules')) {
   } catch (e) {}
 }
 
-global.__vite_start_time = performance.now()
+globalThis.__vite_start_time = performance.now()
 
 // check debug mode first before requiring the CLI.
 const debugIndex = process.argv.findIndex((arg) => /^(?:-d|--debug)$/.test(arg))
@@ -51,7 +51,7 @@ if (profileIndex > 0) {
     process.argv.splice(profileIndex, 1)
   }
   const inspector = await import('node:inspector').then((r) => r.default)
-  const session = (global.__vite_profile_session = new inspector.Session())
+  const session = (globalThis.__vite_profile_session = new inspector.Session())
   session.connect()
   session.post('Profiler.enable', () => {
     session.post('Profiler.start', start)
