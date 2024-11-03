@@ -1,16 +1,16 @@
 // docs for router https://github.com/thepassle/app-tools/blob/master/router/README.md
 
-import { html } from 'lit';
+import { html } from 'npm:lit';
 
 if (!(globalThis as any).URLPattern) {
-  await import("urlpattern-polyfill");
+  await import("npm:urlpattern-polyfill");
 }
 
-import { Router } from '@thepassle/app-tools/router.js';
-import { lazy } from '@thepassle/app-tools/router/plugins/lazy.js';
+import { Router } from 'npm:@thepassle/app-tools/router.js';
+import { lazy } from 'npm:@thepassle/app-tools/router/plugins/lazy.js';
 
 // @ts-ignore
-import { title } from '@thepassle/app-tools/router/plugins/title.js';
+import { title } from 'npm:@thepassle/app-tools/router/plugins/title.js';
 
 import './pages/app-home.js';
 

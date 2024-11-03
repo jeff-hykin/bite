@@ -1,9 +1,9 @@
-import { LitElement, css, html } from 'lit';
-import { property, customElement } from 'lit/decorators.js';
+import { LitElement, css, html } from 'npm:lit';
+import { property, customElement } from 'npm:lit/decorators.js';
 import { resolveRouterPath } from '../router';
 
-import '@shoelace-style/shoelace/dist/components/card/card.js';
-import '@shoelace-style/shoelace/dist/components/button/button.js';
+import 'npm:@shoelace-style/shoelace/dist/components/card/card.js';
+import 'npm:@shoelace-style/shoelace/dist/components/button/button.js';
 
 import { styles } from '../styles/shared-styles';
 

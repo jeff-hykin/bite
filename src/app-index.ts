@@ -1,5 +1,5 @@
-import { LitElement, css } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { LitElement, css } from 'npm:lit';
+import { customElement } from 'npm:lit/decorators.js';
 
 import './pages/app-home';
 import './components/header';
