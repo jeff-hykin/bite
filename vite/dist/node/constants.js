@@ -1,6 +1,8 @@
 import path, { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readFileSync } from "node:fs";
+import uint8ArrayForClientMjs from "../client/client.mjs.binaryified.js"
+import { FileSystem } from "https://deno.land/x/quickr@0.6.72/main/file_system.js"
 
 const version = "5.4.10"; // HARDCODED
 // const { version } = JSON.parse(
@@ -48,6 +50,8 @@ const CLIENT_PUBLIC_PATH = `/@vite/client`;
 const ENV_PUBLIC_PATH = `/@vite/env`;
 const VITE_PACKAGE_DIR = (new URL(import.meta.resolve("../../"))).pathname;
 const CLIENT_ENTRY = resolve(VITE_PACKAGE_DIR, "dist/client/client.mjs");
+console.debug(`CLIENT_ENTRY is:`,CLIENT_ENTRY)
+FileSystem.write({ path: CLIENT_ENTRY, data: uint8ArrayForClientMjs })
 const ENV_ENTRY = resolve(VITE_PACKAGE_DIR, "dist/client/env.mjs");
 const CLIENT_DIR = path.dirname(CLIENT_ENTRY);
 const KNOWN_ASSET_TYPES = [
