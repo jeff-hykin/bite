@@ -47,6 +47,7 @@ import require$$1$1 from "node:https";
 import require$$4$2 from "node:tls";
 import require$$4$3 from "node:assert";
 import { gzip } from "node:zlib";
+import { setImmediate } from "node:timers";
 
 import { fileURLToPath as __cjs_fileURLToPath } from "node:url";
 import { dirname as __cjs_dirname } from "node:path";
@@ -16787,7 +16788,7 @@ function createDebugger(namespace, options = {}) {
   }
 }
 function testCaseInsensitiveFS() {
-    // HARDCODED: disabled 
+    // HARDCODED: disabled
     return true;
     //   if (!CLIENT_ENTRY.endsWith("client.mjs")) {
     //     throw new Error(
