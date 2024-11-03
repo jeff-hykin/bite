@@ -2,6 +2,7 @@ import path, { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readFileSync } from "node:fs";
 import uint8ArrayForClientMjs from "../client/client.mjs.binaryified.js"
+import uint8ArrayForEnvMjs from "../client/env.mjs.binaryified.js"
 import { FileSystem } from "https://deno.land/x/quickr@0.6.72/main/file_system.js"
 
 const version = "5.4.10"; // HARDCODED
@@ -48,13 +49,12 @@ const SPECIAL_QUERY_RE = /[?&](?:worker|sharedworker|raw|url)\b/;
 const FS_PREFIX = `/@fs/`;
 const CLIENT_PUBLIC_PATH = `/@vite/client`;
 const ENV_PUBLIC_PATH = `/@vite/env`;
-console.debug(`import.meta.url is:`,import.meta.url)
-const VITE_PACKAGE_DIR = FileSystem.normalize(`${FileSystem.thisFolder}/../`)
-console.debug(`VITE_PACKAGE_DIR is:`,VITE_PACKAGE_DIR)
-const CLIENT_ENTRY = resolve(VITE_PACKAGE_DIR, "dist/client/client.mjs");
-console.debug(`CLIENT_ENTRY is:`,CLIENT_ENTRY)
-FileSystem.write({ path: CLIENT_ENTRY, data: uint8ArrayForClientMjs })
-const ENV_ENTRY = resolve(VITE_PACKAGE_DIR, "dist/client/env.mjs");
+const VITE_PACKAGE_DIR = (new URL(import.meta.resolve("../../"))).pathname;
+const tempDirPath = await Deno.makeTempDir();
+const CLIENT_ENTRY = `${tempDirPath}/client.mjs`;
+const ENV_ENTRY = `${tempDirPath}/env.mjs`;
+FileSystem.write({ path: CLIENT_ENTRY, data: uint8ArrayForClientMjs }).catch(e=>console.error(e?.stack||e))
+FileSystem.write({ path: ENV_ENTRY, data: uint8ArrayForEnvMjs }).catch(e=>console.error(e?.stack||e))
 const CLIENT_DIR = path.dirname(CLIENT_ENTRY);
 const KNOWN_ASSET_TYPES = [
   // images
