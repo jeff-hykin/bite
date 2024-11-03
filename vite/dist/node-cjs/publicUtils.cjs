@@ -14,9 +14,10 @@ var readline = require('node:readline');
 var require$$2 = require('os');
 
 var _documentCurrentScript = typeof document !== 'undefined' ? document.currentScript : null;
-const { version: version$2 } = JSON.parse(
-  fs$1.readFileSync(new URL("../../package.json", (typeof document === 'undefined' ? require('u' + 'rl').pathToFileURL(__filename).href : (_documentCurrentScript && _documentCurrentScript.src || new URL('node-cjs/publicUtils.cjs', document.baseURI).href)))).toString()
-);
+const version$2 = "5.4.10" // HARDCODED
+// const { version: version$2 } = JSON.parse(
+//   fs$1.readFileSync(new URL("../../package.json", (typeof document === 'undefined' ? require('u' + 'rl').pathToFileURL(__filename).href : (_documentCurrentScript && _documentCurrentScript.src || new URL('node-cjs/publicUtils.cjs', document.baseURI).href)))).toString()
+// );
 const VERSION = version$2;
 const FS_PREFIX = `/@fs/`;
 const VITE_PACKAGE_DIR = path$3.resolve(

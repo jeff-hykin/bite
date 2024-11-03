@@ -2,9 +2,10 @@ import path, { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { readFileSync } from "node:fs";
 
-const { version } = JSON.parse(
-  readFileSync(new URL("../../package.json", import.meta.url)).toString()
-);
+const version = "5.4.10"; // HARDCODED
+// const { version } = JSON.parse(
+//   readFileSync(new URL("../../package.json", import.meta.url)).toString()
+// );
 const VERSION = version;
 const DEFAULT_MAIN_FIELDS = [
   "browser",

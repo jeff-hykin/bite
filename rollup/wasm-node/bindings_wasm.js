@@ -1,6 +1,6 @@
 var module = module||{};module.exports=module.exports||{};
-import fs from 'node:fs';
 import { TextDecoder, TextEncoder } from "node:util";
+import uint8ArrayForBindingsWasmBgWasm from "./bindings_wasm_bg.wasm.binaryified.js"
 
 let imports = {};
 imports['__wbindgen_placeholder__'] = module.exports;
@@ -366,10 +366,8 @@ module.exports.__wbindgen_memory = function() {
     return addHeapObject(ret);
 };
 
-const path = (new URL(import.meta.resolve('./bindings_wasm_bg.wasm'))).pathname;
-const bytes = fs.readFileSync(path);
 
-const wasmModule = new WebAssembly.Module(bytes);
+const wasmModule = new WebAssembly.Module(uint8ArrayForBindingsWasmBgWasm);
 const wasmInstance = new WebAssembly.Instance(wasmModule, imports);
 wasm = wasmInstance.exports;
 module.exports.__wasm = wasm;
