@@ -46,11 +46,9 @@ const SPECIAL_QUERY_RE = /[?&](?:worker|sharedworker|raw|url)\b/;
 const FS_PREFIX = `/@fs/`;
 const CLIENT_PUBLIC_PATH = `/@vite/client`;
 const ENV_PUBLIC_PATH = `/@vite/env`;
-const VITE_PACKAGE_DIR = resolve(
-  // import.meta.url is `dist/node/constants.js` after bundle
-  fileURLToPath(import.meta.url),
-  "../../.."
-);
+console.debug(`import.meta.url is:`,import.meta.url)
+console.debug(`import.meta.resolve("../../") is:`,import.meta.resolve("../../"))
+const VITE_PACKAGE_DIR = fileURLToPath(import.meta.resolve("../../"));
 const CLIENT_ENTRY = resolve(VITE_PACKAGE_DIR, "dist/client/client.mjs");
 const ENV_ENTRY = resolve(VITE_PACKAGE_DIR, "dist/client/env.mjs");
 const CLIENT_DIR = path.dirname(CLIENT_ENTRY);
