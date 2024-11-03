@@ -48,7 +48,7 @@ const CLIENT_PUBLIC_PATH = `/@vite/client`;
 const ENV_PUBLIC_PATH = `/@vite/env`;
 console.debug(`import.meta.url is:`,import.meta.url)
 console.debug(`import.meta.resolve("../../") is:`,import.meta.resolve("../../"))
-const VITE_PACKAGE_DIR = fileURLToPath(import.meta.resolve("../../"));
+const VITE_PACKAGE_DIR = (new URL(import.meta.resolve("../../"))).pathname;
 const CLIENT_ENTRY = resolve(VITE_PACKAGE_DIR, "dist/client/client.mjs");
 const ENV_ENTRY = resolve(VITE_PACKAGE_DIR, "dist/client/env.mjs");
 const CLIENT_DIR = path.dirname(CLIENT_ENTRY);
