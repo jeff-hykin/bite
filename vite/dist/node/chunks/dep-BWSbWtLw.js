@@ -16765,7 +16765,8 @@ function resolveDependencyVersion(dep, pkgRelativePath = "../../package.json") {
   const pkgPath = path$n.resolve(_require$1.resolve(dep), pkgRelativePath);
   return JSON.parse(fs__default.readFileSync(pkgPath, "utf-8")).version;
 }
-const rollupVersion = resolveDependencyVersion("rollup");
+// const rollupVersion = resolveDependencyVersion("rollup");
+const rollupVersion = "4.24.3" // HARDCODED
 
 const filter = process.env.VITE_DEBUG_FILTER;
 const DEBUG = process.env.DEBUG;
