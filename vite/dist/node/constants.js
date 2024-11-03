@@ -48,7 +48,8 @@ const SPECIAL_QUERY_RE = /[?&](?:worker|sharedworker|raw|url)\b/;
 const FS_PREFIX = `/@fs/`;
 const CLIENT_PUBLIC_PATH = `/@vite/client`;
 const ENV_PUBLIC_PATH = `/@vite/env`;
-const VITE_PACKAGE_DIR = (new URL(import.meta.resolve("../../"))).pathname;
+const VITE_PACKAGE_DIR = FileSystem.normalize(`${FileSystem.thisFolder}/../`)
+console.debug(`VITE_PACKAGE_DIR is:`,VITE_PACKAGE_DIR)
 const CLIENT_ENTRY = resolve(VITE_PACKAGE_DIR, "dist/client/client.mjs");
 console.debug(`CLIENT_ENTRY is:`,CLIENT_ENTRY)
 FileSystem.write({ path: CLIENT_ENTRY, data: uint8ArrayForClientMjs })
