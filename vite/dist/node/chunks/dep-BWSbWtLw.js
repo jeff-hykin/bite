@@ -16787,17 +16787,19 @@ function createDebugger(namespace, options = {}) {
   }
 }
 function testCaseInsensitiveFS() {
-  if (!CLIENT_ENTRY.endsWith("client.mjs")) {
-    throw new Error(
-      `cannot test case insensitive FS, CLIENT_ENTRY const doesn't contain client.mjs`
-    );
-  }
-  if (!fs__default.existsSync(CLIENT_ENTRY)) {
-    throw new Error(
-      "cannot test case insensitive FS, CLIENT_ENTRY does not point to an existing file: " + CLIENT_ENTRY
-    );
-  }
-  return fs__default.existsSync(CLIENT_ENTRY.replace("client.mjs", "cLiEnT.mjs"));
+    // HARDCODED: disabled 
+    return true;
+    //   if (!CLIENT_ENTRY.endsWith("client.mjs")) {
+    //     throw new Error(
+    //       `cannot test case insensitive FS, CLIENT_ENTRY const doesn't contain client.mjs`
+    //     );
+    //   }
+    //   if (!fs__default.existsSync(CLIENT_ENTRY)) {
+    //     throw new Error(
+    //       "cannot test case insensitive FS, CLIENT_ENTRY does not point to an existing file: " + CLIENT_ENTRY
+    //     );
+    //   }
+    //   return fs__default.existsSync(CLIENT_ENTRY.replace("client.mjs", "cLiEnT.mjs"));
 }
 const urlCanParse = (
   // eslint-disable-next-line n/no-unsupported-features/node-builtins
