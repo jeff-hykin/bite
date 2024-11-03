@@ -15,4 +15,4 @@ import "node:path"
 export const parseAst = parseAst_js.parseAst
 export const parseAstAsync = parseAst_js.parseAstAsync
 
-export default exports
+export default parseAst_js

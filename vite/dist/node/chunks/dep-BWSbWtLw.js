@@ -1,5 +1,6 @@
 var module = module||{};module.exports=module.exports||{};
 import * as fs$j from "node:fs";
+import { Buffer } from "node:buffer";
 import fs__default, { promises as promises$1 } from "node:fs";
 import fsp, { lstat as lstat$3, readdir as readdir$5, readlink, realpath as realpath$2 } from "node:fs/promises";
 import path$n, { win32 as win32$1, posix as posix$1, isAbsolute as isAbsolute$1, join as join$2, extname as extname$1, dirname as dirname$2, relative as relative$2, basename as basename$2 } from "node:path";
@@ -9,7 +10,8 @@ import { performance as performance$1 } from "node:perf_hooks";
 import { createRequire as createRequire$1, builtinModules } from "node:module";
 import require$$0$3 from "node:tty";
 import require$$0$4, { win32, posix, isAbsolute, resolve as resolve$3, relative as relative$1, basename as basename$1, extname, dirname as dirname$1, join as join$1, sep as sep$1, normalize as normalize$1 } from "node:path";
-import esbuild, { transform as transform$1, formatMessages, build as build$3 } from "https://esm.sh/esbuild@0.24.0" /* CHECKME: file(s) didn't exist, assuming npm */;
+import * as esbuild from "https://deno.land/x/esbuild@v0.24.0/mod.js";
+import { transform as transform$1, formatMessages, build as build$3 } from "https://deno.land/x/esbuild@v0.24.0/mod.js";
 import { CLIENT_ENTRY, OPTIMIZABLE_ENTRY_RE, wildcardHosts, loopbackHosts, FS_PREFIX, CLIENT_PUBLIC_PATH, ENV_PUBLIC_PATH, DEFAULT_ASSETS_INLINE_LIMIT, CSS_LANGS_RE, ESBUILD_MODULES_TARGET, SPECIAL_QUERY_RE, ENV_ENTRY, DEP_VERSION_RE, DEFAULT_MAIN_FIELDS, DEFAULT_EXTENSIONS, KNOWN_ASSET_TYPES, JS_TYPES_RE, METADATA_FILENAME, VITE_PACKAGE_DIR, DEFAULT_DEV_PORT, CLIENT_DIR, VERSION, DEFAULT_PREVIEW_PORT, DEFAULT_ASSETS_RE, DEFAULT_CONFIG_FILES } from "../constants.js";
 import * as require$$0$2 from "node:fs";
 import require$$0__default, { lstatSync, readdir as readdir$4, readdirSync, readlinkSync, realpathSync as realpathSync$1, existsSync, readFileSync, statSync as statSync$1 } from "node:fs";

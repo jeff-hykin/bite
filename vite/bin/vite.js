@@ -58,5 +58,5 @@ if (profileIndex > 0) {
     session.post('Profiler.start', start)
   })
 } else {
-  start()
+  await start()
 }

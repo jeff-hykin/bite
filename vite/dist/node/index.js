@@ -2,7 +2,7 @@ export { parseAst, parseAstAsync } from "../../../rollup/parseAst.js";
 import { i as isInNodeModules, a as arraify } from "./chunks/dep-BWSbWtLw.js";
 export { b as build, g as buildErrorMessage, k as createFilter, v as createLogger, c as createServer, d as defineConfig, h as fetchModule, f as formatPostcssSourceMap, x as isFileServingAllowed, l as loadConfigFromFile, y as loadEnv, j as mergeAlias, m as mergeConfig, n as normalizePath, o as optimizeDeps, e as preprocessCSS, p as preview, r as resolveConfig, z as resolveEnvPrefix, q as rollupVersion, w as searchForWorkspaceRoot, u as send, s as sortUserPlugins, t as transformWithEsbuild } from "./chunks/dep-BWSbWtLw.js";
 export { VERSION as version } from "./constants.js";
-export { version as esbuildVersion } from "https://esm.sh/esbuild@0.24.0";
+export { version as esbuildVersion } from "https://deno.land/x/esbuild@v0.24.0/mod.js";
 import { existsSync, readFileSync } from "node:fs";
 import { ViteRuntime, ESModulesRunner } from "https://esm.sh/vite@5.4.10/runtime";
 import "node:fs/promises";
