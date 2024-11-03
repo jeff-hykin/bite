@@ -1,9 +1,9 @@
-import { LitElement, css, html } from 'npm:lit';
-import { property, customElement } from 'npm:lit/decorators.js';
+import { LitElement, css, html } from 'https://esm.sh/lit';
+import { property, customElement } from 'https://esm.sh/lit/decorators.js';
 import { resolveRouterPath } from '../router';
 
-import 'npm:@shoelace-style/shoelace/dist/components/card/card.js';
-import 'npm:@shoelace-style/shoelace/dist/components/button/button.js';
+import 'https://esm.sh/@shoelace-style/shoelace/dist/components/card/card.js';
+import 'https://esm.sh/@shoelace-style/shoelace/dist/components/button/button.js';
 
 import { styles } from '../styles/shared-styles';
 

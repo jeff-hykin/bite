@@ -1,4 +1,4 @@
-import { css } from 'npm:lit';
+import { css } from 'https://esm.sh/lit';
 
 // these styles can be imported from any component
 // for an example of how to use this, check /pages/about-about.ts

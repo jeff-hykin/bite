@@ -3,7 +3,7 @@
 import { PluginHooks, RollupError, SourceMap, ModuleInfo, PartialResolvedId, MinimalPluginContext, InputOptions, CustomPluginOptions, LoadResult, SourceDescription, RollupOptions, WatcherOptions, InputOption, ModuleFormat, RollupOutput, RollupWatcher, SourceMapInput, ExistingRawSourceMap, OutputBundle, OutputChunk, ObjectHook, PluginContext, ResolveIdResult, TransformPluginContext, GetManualChunk } from "rollup" /* CHECKME: file(s) didn't exist, assuming npm */;
 import * as rollup from "rollup" /* CHECKME: file(s) didn't exist, assuming npm */;
 export { rollup as Rollup };
-export { parseAst, parseAstAsync } from "npm:rollup/parseAst";
+export { parseAst, parseAstAsync } from "https://esm.sh/rollup/parseAst";
 import * as http from "node:http";
 import { OutgoingHttpHeaders, ClientRequestArgs, IncomingMessage, ClientRequest, Agent, Server, ServerResponse } from "node:http";
 import { Http2SecureServer } from "node:http2";
@@ -27,7 +27,7 @@ export { CustomEventMap, InferCustomEventPayload, InvalidatePayload } from "../.
 import { TransformOptions as esbuild_TransformOptions, TransformResult as esbuild_TransformResult, BuildOptions as esbuild_BuildOptions } from "esbuild" /* CHECKME: file(s) didn't exist, assuming npm */;
 export { TransformOptions as EsbuildTransformOptions, version as esbuildVersion } from "esbuild" /* CHECKME: file(s) didn't exist, assuming npm */;
 import * as PostCSS from "postcss" /* CHECKME: file(s) didn't exist, assuming npm */;
-import { ViteRuntimeOptions, ViteModuleRunner, ViteRuntime, HMRRuntimeConnection } from "npm:vite/runtime";
+import { ViteRuntimeOptions, ViteModuleRunner, ViteRuntime, HMRRuntimeConnection } from "https://esm.sh/vite/runtime";
 export { GeneralImportGlobOptions, ImportGlobFunction, ImportGlobOptions, KnownAsTypeMap } from "../../types/importGlob.js";
 export { ChunkMetadata } from "../../types/metadata.js";
 import "../../types/hot.js";
@@ -857,7 +857,7 @@ declare class ModuleGraph {
     getModulesByFile(file: string): Set<ModuleNode> | undefined;
     onFileChange(file: string): void;
     onFileDelete(file: string): void;
-    invalidateModule(mod: ModuleNode, seen?: Set<ModuleNode>, timestamp?: number, isHmr?: boolean, 
+    invalidateModule(mod: ModuleNode, seen?: Set<ModuleNode>, timestamp?: number, isHmr?: boolean,
     ): void;
     invalidateAll(): void;
     /**
@@ -868,7 +868,7 @@ declare class ModuleGraph {
      * @param staticImportedUrls Subset of `importedModules` where they're statically imported in code.
      *   This is only used for soft invalidations so `undefined` is fine but may cause more runtime processing.
      */
-    updateModuleInfo(mod: ModuleNode, importedModules: Set<string | ModuleNode>, importedBindings: Map<string, Set<string>> | null, acceptedModules: Set<string | ModuleNode>, acceptedExports: Set<string> | null, isSelfAccepting: boolean, ssr?: boolean, 
+    updateModuleInfo(mod: ModuleNode, importedModules: Set<string | ModuleNode>, importedBindings: Map<string, Set<string>> | null, acceptedModules: Set<string | ModuleNode>, acceptedExports: Set<string> | null, isSelfAccepting: boolean, ssr?: boolean,
     ): Promise<Set<ModuleNode> | undefined>;
     ensureEntryFromUrl(rawUrl: string, ssr?: boolean, setIsSelfAccepting?: boolean): Promise<ModuleNode>;
     createFileOnlyEntry(file: string): ModuleNode;

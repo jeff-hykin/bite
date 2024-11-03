@@ -1,5 +1,5 @@
-import { LitElement, html } from 'npm:lit';
-import { customElement } from 'npm:lit/decorators.js';
+import { LitElement, html } from 'https://esm.sh/lit';
+import { customElement } from 'https://esm.sh/lit/decorators.js';
 
 // You can also import styles from another file
 // if you prefer to keep your CSS seperate from your component
@@ -7,7 +7,7 @@ import { styles } from './about-styles';
 
 import { styles as sharedStyles } from '../../styles/shared-styles'
 
-import 'npm:@shoelace-style/shoelace/dist/components/card/card.js';
+import 'https://esm.sh/@shoelace-style/shoelace/dist/components/card/card.js';
 
 @customElement('app-about')
 export class AppAbout extends LitElement {

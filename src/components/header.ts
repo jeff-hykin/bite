@@ -1,8 +1,8 @@
-import { LitElement, css, html } from 'npm:lit';
-import { property, customElement } from 'npm:lit/decorators.js';
+import { LitElement, css, html } from 'https://esm.sh/lit';
+import { property, customElement } from 'https://esm.sh/lit/decorators.js';
 import { resolveRouterPath } from '../router';
 
-import 'npm:@shoelace-style/shoelace/dist/components/button/button.js';
+import 'https://esm.sh/@shoelace-style/shoelace/dist/components/button/button.js';
 @customElement('app-header')
 export class AppHeader extends LitElement {
   @property({ type: String }) title = 'template99';
