@@ -2,9 +2,9 @@ import { fileURLToPath as __cjs_fileURLToPath } from "node:url";
 import { dirname as __cjs_dirname } from "node:path";
 import { createRequire as __cjs_createRequire } from "node:module";
 
-const __filename = __cjs_fileURLToPath(import.meta.url);
+const __filename = (new URL(import.meta.url)).pathname;
 const __dirname = __cjs_dirname(__filename);
-const require = __cjs_createRequire(import.meta.url);
+const require = __cjs_createRequire(__filename);
 const __require = require;
 const UNDEFINED_CODE_POINTS = new Set([
     65534, 65535, 131070, 131071, 196606, 196607, 262142, 262143, 327678, 327679, 393214,

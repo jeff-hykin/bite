@@ -52,9 +52,9 @@ import { fileURLToPath as __cjs_fileURLToPath } from "node:url";
 import { dirname as __cjs_dirname } from "node:path";
 import { createRequire as __cjs_createRequire } from "node:module";
 
-const __filename = __cjs_fileURLToPath(import.meta.url);
+const __filename = (new URL("chunks/dep-BWSbWtLw.js", import.meta.url)).pathname;
 const __dirname = __cjs_dirname(__filename);
-const require = __cjs_createRequire(import.meta.url);
+const require = __cjs_createRequire(__filename);
 const __require = require;
 var commonjsGlobal = typeof globalThis !== 'undefined' ? globalThis : typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
@@ -16493,7 +16493,7 @@ var debug$i = /*@__PURE__*/getDefaultExportFromCjs(srcExports$1);
 let pnp;
 if (process.versions.pnp) {
   try {
-    pnp = createRequire$1(import.meta.url)("pnpapi");
+    pnp = createRequire$1(__filename)("pnpapi");
   } catch {
   }
 }
@@ -16760,7 +16760,7 @@ function isOptimizable(id, optimizeDeps) {
 }
 const bareImportRE = /^(?![a-zA-Z]:)[\w@](?!.*:\/\/)/;
 const deepImportRE = /^([^@][^/]*)\/|^(@[^/]+\/[^/]+)\//;
-const _require$1 = createRequire$1(import.meta.url);
+const _require$1 = createRequire$1(__filename);
 function resolveDependencyVersion(dep, pkgRelativePath = "../../package.json") {
   const pkgPath = path$n.resolve(_require$1.resolve(dep), pkgRelativePath);
   return JSON.parse(fs__default.readFileSync(pkgPath, "utf-8")).version;
@@ -17385,7 +17385,7 @@ function getHash(text, length = 8) {
   if (length <= 64) return h;
   return h.padEnd(length, "_");
 }
-const _dirname = path$n.dirname(fileURLToPath(import.meta.url));
+const _dirname = path$n.dirname(__filename);
 const requireResolveFromRootWithFallback = (root, id) => {
   const found = resolvePackageData(id, root) || resolvePackageData(id, _dirname);
   if (!found) {
@@ -19645,7 +19645,7 @@ var FakeWorker = class {
       fn,
       options.parentFunctions ?? {}
     );
-    const require2 = createRequire$1(import.meta.url);
+    const require2 = createRequire$1(__filename);
     this._fn = new Function(...argsAndCode)(require2, options.parentFunctions);
   }
   async run(...args) {
@@ -37322,7 +37322,7 @@ let cachedSss;
 function loadSss(root) {
   if (cachedSss) return cachedSss;
   const sssPath = loadPreprocessorPath("sugarss" /* sss */, root);
-  cachedSss = createRequire$1(import.meta.url)(sssPath);
+  cachedSss = createRequire$1(__filename)(sssPath);
   return cachedSss;
 }
 function cleanScssBugUrl(url) {
@@ -66684,7 +66684,7 @@ async function bundleConfigFile(fileName, isESM) {
     dependencies: result.metafile ? Object.keys(result.metafile.inputs) : []
   };
 }
-const _require = createRequire$1(import.meta.url);
+const _require = createRequire$1(__filename);
 async function loadConfigFromBundledFile(fileName, bundledCode, isESM) {
   if (isESM) {
     const fileBase = `${fileName}.timestamp-${Date.now()}-${Math.random().toString(16).slice(2)}`;

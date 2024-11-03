@@ -2,9 +2,9 @@ import { fileURLToPath as __cjs_fileURLToPath } from "node:url";
 import { dirname as __cjs_dirname } from "node:path";
 import { createRequire as __cjs_createRequire } from "node:module";
 
-const __filename = __cjs_fileURLToPath(import.meta.url);
+const __filename = (new URL(import.meta.url)).pathname;
 const __dirname = __cjs_dirname(__filename);
-const require = __cjs_createRequire(import.meta.url);
+const require = __cjs_createRequire(__filename);
 const __require = require;
 var openParentheses = "(".charCodeAt(0);
 var closeParentheses = ")".charCodeAt(0);
