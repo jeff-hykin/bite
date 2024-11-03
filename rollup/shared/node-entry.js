@@ -22175,12 +22175,13 @@ class WatchEmitter {
 let fsEvents;
 let fsEventsImportError;
 async function loadFsEvents() {
-    try {
-        ({ default: fsEvents } = await import('fsevents'));
-    }
-    catch (error) {
-        fsEventsImportError = error;
-    }
+    // try {
+    //     ({ default: fsEvents } = await import('fsevents'));
+    // }
+    // catch (error) {
+    //     fsEventsImportError = error;
+    // }
+    fsEventsImportError = new Error('fsevents is intentionally not available');
 }
 // A call to this function will be injected into the chokidar code
 function getFsEvents() {

@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import { performance } from "node:perf_hooks"
+import nodeInspector from 'node:inspector'
 
 // if (!import.meta.url.includes('node_modules')) {
 //   try {
@@ -50,7 +51,7 @@ if (profileIndex > 0) {
   if (next && !next.startsWith('-')) {
     process.argv.splice(profileIndex, 1)
   }
-  const inspector = await import('node:inspector').then((r) => r.default)
+  const inspector = nodeInspector?.default || nodeInspector
   const session = (globalThis.__vite_profile_session = new inspector.Session())
   session.connect()
   session.post('Profiler.enable', () => {

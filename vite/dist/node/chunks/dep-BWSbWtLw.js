@@ -1,4 +1,4 @@
-module = module||{};module.exports=module.exports||{};
+var module = module||{};module.exports=module.exports||{};
 import * as fs$j from "node:fs";
 import fs__default, { promises as promises$1 } from "node:fs";
 import fsp, { lstat as lstat$3, readdir as readdir$5, readlink, realpath as realpath$2 } from "node:fs/promises";
@@ -31,12 +31,12 @@ import os$5 from "node:os";
 import { createHash as createHash$2 } from "node:crypto";
 import { promises } from "node:dns";
 import require$$3$1 from "node:crypto";
-import require$$0$8, { createRequire as createRequire$2 } from "node:module" /* CHECKME: file(s) didn't exist, assuming npm */;
+import require$$0$8, { createRequire as createRequire$2 } from "node:module";
 import assert$1 from "node:assert";
 import v8 from "node:v8";
 import { Worker as Worker$1 } from "node:worker_threads";
 import { Buffer as Buffer$1 } from "node:buffer";
-import { parseAstAsync, parseAst } from "npm:rollup/parseAst";
+import { parseAstAsync, parseAst } from "../../../../rollup/parseAst.js";
 import * as qs from "node:querystring";
 import readline from "node:readline";
 import zlib$1 from "node:zlib";
@@ -16764,6 +16764,7 @@ function resolveDependencyVersion(dep, pkgRelativePath = "../../package.json") {
   return JSON.parse(fs__default.readFileSync(pkgPath, "utf-8")).version;
 }
 const rollupVersion = resolveDependencyVersion("rollup");
+
 const filter = process.env.VITE_DEBUG_FILTER;
 const DEBUG = process.env.DEBUG;
 function createDebugger(namespace, options = {}) {
@@ -47612,7 +47613,7 @@ async function bundleWorkerEntry(config, id) {
       `Circular worker imports detected. Vite does not support it. Import chain: ${newBundleChain.map((id2) => prettifyUrl(id2, config.root)).join(" -> ")}`
     );
   }
-  const { rollup } = await import('https://esm.sh/@rollup/wasm-node@4.24.3');
+  const { rollup } = await import('../../../../rollup/rollup.js');
   const { plugins, rollupOptions, format } = config.worker;
   const bundle = await rollup({
     ...rollupOptions,
@@ -65414,7 +65415,7 @@ watching for file changes...`));
         emptyOutDir,
         config.cacheDir
       );
-      const { watch } = await import('rollup');
+      const { watch } = await import('../../../../rollup/rollup.js');
       const watcher = watch({
         ...rollupOptions,
         output: normalizedOutputs,
@@ -65439,7 +65440,7 @@ build started...`));
       });
       return watcher;
     }
-    const { rollup } = await import('rollup');
+    const { rollup } = await import('../../../../rollup/rollup.js');
     startTime = Date.now();
     bundle = await rollup(rollupOptions);
     if (options.write) {
