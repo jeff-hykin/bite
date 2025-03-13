@@ -60285,6 +60285,13 @@ build started...`)
             res.push(await bundle[options.write ? "write" : "generate"](output))
         }
         logger.info(`${colors$1.green(`\u2713 built in ${displayTime(Date.now() - startTime)}`)}`)
+        // prevent running forever on build
+        // TODO: this is a hack, it should close on its own
+        if (!config?.build?.watch) {
+            if (globalThis.Deno) {
+                Deno.exit(0)
+            }
+        }
         return Array.isArray(outputs) ? res : res[0]
     } catch (e) {
         enhanceRollupError(e)
