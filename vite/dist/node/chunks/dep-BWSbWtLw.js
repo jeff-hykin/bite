@@ -61377,8 +61377,14 @@ async function loadConfigFromBundledFile(fileName, bundledCode, isESM) {
         try {
             return (await import(fileUrl)).default
         } catch (e) {
-            console.warn(`couldn't load fileUrl: ${fileUrl}`)
-            return {}
+            try {
+                return (await import(pathToFileURL(fileName))).default
+            } catch (error) {
+                console.warn(`couldn't load fileName: ${pathToFileURL(fileName)}`)
+                console.warn(`couldn't load fileUrl: ${fileUrl}`)
+                console.warn(error.stack || e.stack)
+                return {}
+            }
         } finally {
             fs__default.unlink(fileNameTmp, () => {})
         }

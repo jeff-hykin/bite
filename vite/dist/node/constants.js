@@ -3,7 +3,7 @@ import { fileURLToPath } from "node:url";
 import { readFileSync } from "node:fs";
 import uint8ArrayForClientMjs from "../client/client.mjs.binaryified.js"
 import uint8ArrayForEnvMjs from "../client/env.mjs.binaryified.js"
-import { FileSystem } from "https://deno.land/x/quickr@0.6.72/main/file_system.js"
+import { FileSystem } from "https://deno.land/x/quickr@0.8.4/main/file_system.js"
 
 const version = "5.4.10"; // HARDCODED
 // const { version } = JSON.parse(
@@ -49,7 +49,12 @@ const SPECIAL_QUERY_RE = /[?&](?:worker|sharedworker|raw|url)\b/;
 const FS_PREFIX = `/@fs/`;
 const CLIENT_PUBLIC_PATH = `/@vite/client`;
 const ENV_PUBLIC_PATH = `/@vite/env`;
-const VITE_PACKAGE_DIR = (new URL(import.meta.resolve("../../"))).pathname;
+let VITE_PACKAGE_DIR
+try {
+    VITE_PACKAGE_DIR = (new URL(import.meta.resolve("../../"))).pathname;
+} catch (error) {
+    VITE_PACKAGE_DIR = (new URL((`${FileSystem.thisFolder}/../../`))).pathname;
+}
 const tempDirPath = await Deno.makeTempDir();
 const CLIENT_ENTRY = `${tempDirPath}/client.mjs`;
 const ENV_ENTRY = `${tempDirPath}/env.mjs`;
